@@ -8,7 +8,7 @@ export default function Footer () {
                 <li><a href="#"><i className="icon icon-social-facebook"></i></a></li>
                 <li><a href="#"><i className="icon icon-social-dribbble"></i></a></li>
             </ul>
-            <span className="copyright">&copy; Copyright 2016. Bonativo Created By <a href="http://templatestock.co">Template Stock</a></span>
+            <span className="copyright">&copy; Copyright 2021. Hire Lab Created By <a href="http://templatestock.co">Template Stock</a></span>
         </div>
     </footer>
     )
