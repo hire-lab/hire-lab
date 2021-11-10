@@ -8,7 +8,7 @@ export default function Candidates() {
             <div className="row">
                 <div className="col-sm-8 col-sm-offset-2">
                     <div className="section-title text-center">
-                        <h1> <span className="alo">Hire Lab</span> Applicants</h1> 
+                        <h1> <span className="alo">TOP</span> Applicants</h1> 
                         <span className="border-line"></span>
                         <p className="lead subtitle-caption">
                         You are here because people are important to you!
