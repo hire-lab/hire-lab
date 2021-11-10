@@ -1,3 +1,5 @@
+import CandidateProfile from "./CandidateProfile"
+
 export default function Candidates() {
 
     return (
@@ -15,50 +17,22 @@ export default function Candidates() {
                 </div>
             </div>
             <div className="row">
-    
-                <div className="col-sm-4 margin-bottom30">
-                    <div className="team-box">
-                        <img src="images/team-1.jpg" className="img-responsive" alt="" />
-    
-                        <ul className="social list-inline">
-                            <li><a href="#"><i className="icon icon-social-twitter"></i></a></li>
-                            <li><a href="#"><i className="icon icon-social-facebook"></i></a></li>
-                            <li><a href="#"><i className="icon icon-social-dribbble"></i></a></li>
-                        </ul>
-                    </div>
-                    <div className="team-desc">
-                        <h4>Daniel Smith</h4>
-                        <em>Manager</em>
-                    </div>
-                </div>
-                <div className="col-sm-4 margin-bottom30">
-                    <div className="team-box">
-                        <img src="images/team-2.jpg" className="img-responsive" alt="" />                       
-                        <ul className="social list-inline">
-                            <li><a href="#"><i className="icon icon-social-twitter"></i></a></li>
-                            <li><a href="#"><i className="icon icon-social-facebook"></i></a></li>
-                            <li><a href="#"><i className="icon icon-social-dribbble"></i></a></li>
-                        </ul>
-                    </div>
-                    <div className="team-desc">
-                        <h4>Daniel Smith</h4>
-                        <em>Manager</em>
-                    </div>
-                </div>
-                <div className="col-sm-4 margin-bottom30">
-                    <div className="team-box">
-                        <img src="images/team-3.jpg" className="img-responsive" alt="" />                     
-                        <ul className="social list-inline">
-                            <li><a href="#"><i className="icon icon-social-twitter"></i></a></li>
-                            <li><a href="#"><i className="icon icon-social-facebook"></i></a></li>
-                            <li><a href="#"><i className="icon icon-social-dribbble"></i></a></li>
-                        </ul>
-                    </div>
-                    <div className="team-desc">
-                        <h4>Daniel Smith</h4>
-                        <em>Manager</em>
-                    </div>
-                </div>
+                <CandidateProfile
+                    image= "images/team-1.jpg"
+                    name="Daniel Smith"
+                    position="Sales Manager"
+                />
+                <CandidateProfile
+                    image = "images/team-3.jpg"
+                    name="Lisa Cudrow"
+                    position="Art Director"
+                />
+                <CandidateProfile
+                    image = "images/team-2.jpg"
+                    name="Mike Ross"
+                    position="Graphic Designer"
+                />
+
             </div>
         </div>
     </div>
