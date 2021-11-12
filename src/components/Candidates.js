@@ -21,7 +21,7 @@ export default function Candidates() {
 
     return (
         <div className="team" id="candidates">
-        <div className="container">
+          <div className="container">
             <div className="row">
                 <div className="col-sm-8 col-sm-offset-2">
                     <div className="section-title text-center">
@@ -34,13 +34,15 @@ export default function Candidates() {
                 </div>
             </div>
             <div className="row">
-                {candidates.map( candidate => {
+                {candidates.map(candidate => {
                     <CandidateProfile 
                         key = {candidate.id}
-                        candidate = {candidate} />
+                        image = {candidate.image}
+                        name = {candidate.name}
+                        position = {candidate.position} />
                 })}
             </div>
         </div>
-    </div>
+        </div>
     )
 }

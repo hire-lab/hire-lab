@@ -1,9 +1,8 @@
-export default function CandidateProfile({candidate}) {
+export default function CandidateProfile({image, name, position}) {
     return (
-        <>
         <div className="col-sm-4 margin-bottom30">
           <div className="team-box">
-            <img src={candidate.image} className="img-responsive" alt="" />
+            <img src={image} className="img-responsive" alt="" />
 
             <ul className="social list-inline">
                 <li><a href="#"><i className="icon icon-social-twitter"></i></a></li>
@@ -12,10 +11,9 @@ export default function CandidateProfile({candidate}) {
             </ul>
           </div>
           <div className="team-desc">
-            <h4>{candidate.name}</h4>
-            <em>{candidate.position}</em>
+            <h4>{name}</h4>
+            <em>{position}</em>
           </div>
         </div>
-        </>
     )
 }
