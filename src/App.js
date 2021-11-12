@@ -4,7 +4,6 @@ import LandingBanner from "./components/LandingPage";
 import About from "./components/About";
 import Candidates from "./components/Candidates";
 import Jobs from "./components/Jobs";
-import Blog from "./components/Blog";
 import Register from "./components/Register";
 import Login from "./components/Login";
 

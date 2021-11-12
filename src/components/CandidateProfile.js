@@ -1,10 +1,9 @@
-export default function CandidateProfile(props) {
-
+export default function CandidateProfile({candidate}) {
     return (
         <>
         <div className="col-sm-4 margin-bottom30">
           <div className="team-box">
-            <img src={props.image} className="img-responsive" alt="" />
+            <img src={candidate.image} className="img-responsive" alt="" />
 
             <ul className="social list-inline">
                 <li><a href="#"><i className="icon icon-social-twitter"></i></a></li>
@@ -13,8 +12,8 @@ export default function CandidateProfile(props) {
             </ul>
           </div>
           <div className="team-desc">
-            <h4>{props.name}</h4>
-            <em>{props.position}</em>
+            <h4>{candidate.name}</h4>
+            <em>{candidate.position}</em>
           </div>
         </div>
         </>

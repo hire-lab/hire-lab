@@ -1,6 +1,23 @@
+import uniqid from 'uniqid';
 import CandidateProfile from "./CandidateProfile"
 
 export default function Candidates() {
+    const candidates = [
+        {id: uniqid(),
+        image: "images/team-1.jpg",
+        name: "Daniel Smith",
+        position: "Sales Manager"},
+
+        {id: uniqid(),
+        image: "images/team-3.jpg",
+        name: "Lisa Cudrow",
+        position: "Art Director"},
+
+        {id: uniqid(),
+        image: "images/team-2.jpg",
+        name: "Mike Ross",
+        position: "Graphic Designer"},
+    ]
 
     return (
         <div className="team" id="candidates">
@@ -17,22 +34,11 @@ export default function Candidates() {
                 </div>
             </div>
             <div className="row">
-                <CandidateProfile
-                    image= "images/team-1.jpg"
-                    name="Daniel Smith"
-                    position="Sales Manager"
-                />
-                <CandidateProfile
-                    image = "images/team-3.jpg"
-                    name="Lisa Cudrow"
-                    position="Art Director"
-                />
-                <CandidateProfile
-                    image = "images/team-2.jpg"
-                    name="Mike Ross"
-                    position="Graphic Designer"
-                />
-
+                {candidates.map( candidate => {
+                    <CandidateProfile 
+                        key = {candidate.id}
+                        candidate = {candidate} />
+                })}
             </div>
         </div>
     </div>
