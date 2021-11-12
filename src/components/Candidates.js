@@ -21,8 +21,8 @@ export default function Candidates() {
 
     return (
         <div className="team" id="candidates">
-          <div className="container">
-            <div className="row">
+             <div className="container">
+              <div className="row">
                 <div className="col-sm-8 col-sm-offset-2">
                     <div className="section-title text-center">
                         <h1> <span className="alo">TOP</span> Applicants</h1> 
@@ -32,17 +32,18 @@ export default function Candidates() {
                         </p>
                     </div>
                 </div>
-            </div>
+              </div>
             <div className="row">
-                {candidates.map(candidate => {
-                    <CandidateProfile 
-                        key = {candidate.id}
-                        image = {candidate.image}
-                        name = {candidate.name}
-                        position = {candidate.position} />
-                })}
+                {candidates.map(candidate => 
+                    <div key={candidate.id}>
+                        <CandidateProfile 
+                            image = {candidate.image}
+                            name = {candidate.name}
+                            position = {candidate.position}/>
+                    </div>
+                )}
             </div>
-        </div>
+            </div>
         </div>
     )
 }
