@@ -2,15 +2,15 @@
 Application to be used by Human Resources Department for managing company's job listings, upcoming interviews and potential candidates.
 
 ## Functionality
-* User Registration (only for members of the HR Team)
-* Option for viewing job listings (guests)
-* Option for creating a job listing (logged-in users)
-* Option for editing and deleting a job listings (author)
-* Option for booking an interview for logged-in users
-* Keeping a list of potential candidates for each job listing
-* Keeping a list of candidates, who do not have a booked interview
-* Keeping statistic for upcoming inteviews based on the principles of good time management
-* Fluid UX
+* User Registration (only for members of the HR Team);
+* Option for viewing job listings (guests);
+* Option for creating a job listing (logged-in users);
+* Option for editing and deleting a job listings (author);
+* Option for booking an interview for logged-in users;
+* Keeping a list of potential candidates for each job listing;
+* Keeping a list of candidates, who do not have a booked interview;
+* Keeping statistic for upcoming inteviews based on the principles of good time management;
+* Fluid UX;
 
 ## Technologies
 * HTML, CSS, Javascript, React
