@@ -43,13 +43,6 @@ Application to be used by Human Resources Department for managing company's job 
 * Candidates
 ```javascript
 {
-    type: Array
-}
-```
-
-* Candidate
-```javascript
-{
     name: String,
     position: String, 
     interview: Pointer<Interviews>
