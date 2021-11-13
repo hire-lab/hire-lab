@@ -43,7 +43,7 @@ Application to be used by Human Resources Department for managing company's job 
 * Candidates
 ```javascript
 {
-    type: String,
+    type: Array
 }
 ```
 
