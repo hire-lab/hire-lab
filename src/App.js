@@ -17,13 +17,13 @@ function App() {
     //improve About page
 
     const routes = {
-        '/home': LandingPage,
-        '/about': About,
-        '/jobs': Jobs,
-        '/candidates': Candidates,
-        '/profile': CandidateProfile,
-        '/login': Login,
-        '/register': Register
+        '/home': <LandingPage />,
+        '/about': <About />,
+        '/jobs': <Jobs />,
+        '/candidates': <Candidates />,
+        '/profile': <CandidateProfile />,
+        '/login': <Login />,
+        '/register': <Register />
     }
 
     const navChangeHandler = (path) => {
@@ -37,7 +37,7 @@ function App() {
         navChangeHandler={navChangeHandler}
     />
 
-      {createElement(routes[page]) || <h2>No page found.</h2>}
+      { routes[page] || <h2>No page found.</h2>}
 
     < Footer />
     </div>
