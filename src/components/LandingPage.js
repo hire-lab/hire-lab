@@ -1,4 +1,4 @@
-export default function LandingBanner() {
+export default function LandingPage() {
     return (
 
         <div className="fullwidthbanner" id="home">
