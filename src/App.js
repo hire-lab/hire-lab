@@ -37,7 +37,7 @@ function App() {
         navChangeHandler={navChangeHandler}
     />
 
-    {createElement(routes[page]) || <h2>No page found.</h2>}
+      {createElement(routes[page]) || <h2>No page found.</h2>}
 
     < Footer />
     </div>

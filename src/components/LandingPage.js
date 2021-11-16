@@ -1,8 +1,6 @@
 export default function LandingPage() {
     return (
-
-        <div className="fullwidthbanner" id="home">
-            <div className="tp-banner">
+            <div className="tp-banner fullwidthbanner"  id="home">
                 <ul>
                     <li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
                         <img src="images/bg-1.jpg" alt="desk" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" />
@@ -38,6 +36,5 @@ export default function LandingPage() {
                
                 </ul>
             </div>
-        </div>
     )
 }
