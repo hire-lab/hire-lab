@@ -62,8 +62,7 @@ Application to be used by Human Resources Department for managing company's job 
 ```javascript
 {
     time: String,
-    candidates: Array<String>,
-    quiz: Pointer<Candidates> 
+    candidates:  Pointer<Candidates> 
 }
 ```
 
