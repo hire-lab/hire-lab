@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
 import Candidates from "./components/Candidates";
-import Jobs from "./components/Jobs";
+import Jobs from "./components/JobsCatalog/Jobs";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import CandidateProfile from "./components/CandidateProfile";
