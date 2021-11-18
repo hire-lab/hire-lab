@@ -54,6 +54,7 @@ Application to be used by Human Resources Department for managing company's job 
 {
     title: String,
     description: String, 
+    requirements: String,
     potentialCandidates: Pointer<Candidates>
 }
 ```
