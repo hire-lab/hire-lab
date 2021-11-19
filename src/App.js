@@ -4,11 +4,10 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
-import Candidates from "./components/Candidates";
+import Candidates from "./components/CandidatesCatalog/Candidates";
 import Jobs from "./components/JobsCatalog/Jobs";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import CandidateProfile from "./components/CandidateProfile";
 
 function App() {
     const [page, setPage] = useState('/home');
@@ -21,7 +20,6 @@ function App() {
         '/about': <About />,
         '/jobs': <Jobs />,
         '/candidates': <Candidates />,
-        '/profile': <CandidateProfile />,
         '/login': <Login />,
         '/register': <Register />
     }

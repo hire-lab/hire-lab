@@ -4,7 +4,6 @@ const preload = require('../middlewares/preload')
 
 router.get('/', async (req, res) => {
    const jobs = await req.storage.getAll();
-   console.log(jobs)
    res.json(jobs)
 })
 

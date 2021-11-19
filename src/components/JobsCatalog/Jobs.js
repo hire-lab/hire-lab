@@ -9,7 +9,7 @@ export default function Jobs() {
             .then(result => {
                 setJobs(result)
             })
-    }, )
+    }, [])
 
     return (
         <section id="services" className="section-padding">
