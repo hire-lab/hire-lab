@@ -45,7 +45,7 @@ Application to be used by Human Resources Department for managing company's job 
 ```javascript
 {
     name: String,
-    position: String, 
+    email: String, 
     interview: Pointer<Interviews>
 }
 ```
