@@ -14,7 +14,8 @@ Application to be used by Human Resources Department for managing company's job 
 
 ## Technologies
 * HTML, CSS, Javascript, React
-* Github Pages, Back4App
+* MongoDB, Node.js REST API
+* Github Pages
 
 ## Views (Pages)
 * **Welcome screen** - landing page
