@@ -837,3 +837,9 @@ cta
 #login {
     margin: 40px 80px;
 }
+
+.job-listings {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

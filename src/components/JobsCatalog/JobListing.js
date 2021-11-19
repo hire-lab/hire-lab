@@ -3,8 +3,8 @@ export default function JobListing({
 }) {
 
     return (
-        <div className="col-sm-6 margin-bottom30">
-        <div className="feature-icon-wrap services-icons clearfix">
+        <div>
+          <div className="feature-icon-wrap services-icons clearfix">
             <div className="left-side-icon">
                 <i className={job.icon}></i>
             </div>
