@@ -15,7 +15,6 @@ export default function Navigation () {
             </div>
             <div id="navbar" className="navbar-collapse collapse">
                 <ul className="nav navbar-nav navbar-right scroll-to">
-                    <li className="active"><Link to="/">Home</Link></li>
                     <li><Link to="/interviews">Interviews</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/jobs">Jobs</Link></li>
