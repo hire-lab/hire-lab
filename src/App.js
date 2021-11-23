@@ -1,4 +1,4 @@
-import { useState, createElement } from "react";
+import {Route, Switch} from 'react-router-dom'
 
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -10,32 +10,23 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 
 function App() {
-    const [page, setPage] = useState('/home');
 
     //add Profile and Interviews, ErrorPage
     //improve About page
 
-    const routes = {
-        '/home': <LandingPage />,
-        '/about': <About />,
-        '/jobs': <Jobs />,
-        '/candidates': <Candidates />,
-        '/login': <Login />,
-        '/register': <Register />
-    }
-
-    const navChangeHandler = (path) => {
-       setPage(path)
-    }
-
   return (
     <div className="App">
 
-    < Navigation 
-        navChangeHandler={navChangeHandler}
-    />
+    < Navigation />
 
-      { routes[page] || <h2>No page found.</h2>}
+    <Switch>
+      <Route path='/' exact component={LandingPage}/>
+      <Route path='/about' component={About} />
+      <Route path='/jobs' component={Jobs}/>
+      <Route path='/candidates' component={Candidates} />
+      <Route path='/login' component={Login}/>
+      <Route path='/register' component={Register} />
+    </Switch>
 
     < Footer />
     </div>

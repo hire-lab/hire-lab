@@ -1,19 +1,8 @@
-export default function Navigation ({
-   navChangeHandler
-}) {
+import {Link} from 'react-router-dom'
 
-    const onNavClick = (e) => {
-        e.preventDefault();
-
-        if(e.target.tagName == 'A'){
-            let url = new URL(e.target.href)
-            navChangeHandler(url.pathname)
-        }
-    }
-
-
+export default function Navigation () {
     return (
-        <nav onClick={onNavClick} className="navbar navbar-default navbar-fixed-top before-color">
+        <nav className="navbar navbar-default navbar-fixed-top before-color">
           <div className="container">
             <div className="navbar-header">
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
@@ -22,19 +11,19 @@ export default function Navigation ({
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand alo" href="index.html">Hire Lab</a>
+                <Link className="navbar-brand alo" to="/">Hire Lab</Link>
             </div>
             <div id="navbar" className="navbar-collapse collapse">
                 <ul className="nav navbar-nav navbar-right scroll-to">
-                    <li className="active"><a href="/home">Home</a></li>
-                    <li><a href="/interviews">Interviews</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/jobs">Jobs</a></li>
-                    <li><a href="/candidates">Candidates</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
-                    <li><a href="/logout">Logout</a></li>                      
+                    <li className="active"><Link to="/">Home</Link></li>
+                    <li><Link to="/interviews">Interviews</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/jobs">Jobs</Link></li>
+                    <li><Link to="/candidates">Candidates</Link></li>
+                    <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/register">Register</Link></li>
+                    <li><Link to="/logout">Logout</Link></li>                      
                 </ul>
             </div>
         </div>
