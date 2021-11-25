@@ -14,7 +14,8 @@ Application to be used by Human Resources Department for managing company's job 
 
 ## Technologies
 * HTML, CSS, Javascript, React
-* MongoDB, Node.js REST API
+* Atlas MongoDB
+* Node.js REST API, Heroku
 * Github Pages
 
 ## Views (Pages)
