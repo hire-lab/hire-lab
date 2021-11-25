@@ -8,6 +8,7 @@ import Candidates from "./components/CandidatesCatalog/Candidates";
 import Jobs from "./components/JobsCatalog/Jobs";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Interview from './components/Interviews';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <Route path='/about' component={About} />
       <Route path='/jobs' component={Jobs}/>
       <Route path='/candidates' component={Candidates} />
+      <Route path='/interviews' component={Interview}/>
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register} />
     </Switch>

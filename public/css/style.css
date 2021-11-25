@@ -843,3 +843,19 @@ cta
     flex-direction: column;
     width: 100%;
 }
+
+.interview-calendar{
+    margin: 40px auto;
+    padding: 70px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.interview-calendar-title{
+    padding-bottom: 30px;
+}
+
+.interview-calendar-info{
+    padding-top: 20px;
+}
