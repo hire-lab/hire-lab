@@ -19,7 +19,6 @@ export default function Navigation () {
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/jobs">Jobs</Link></li>
                     <li><Link to="/candidates">Candidates</Link></li>
-                    <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     <li><Link to="/register">Register</Link></li>
                     <li><Link to="/logout">Logout</Link></li>                      
