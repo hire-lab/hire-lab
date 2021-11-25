@@ -9,11 +9,11 @@ import Jobs from "./components/JobsCatalog/Jobs";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Interview from './components/Interviews';
+import CandidateProfile from './components/CandidatesCatalog/CandidateProfile';
 
 function App() {
 
-    //add Profile and Interviews, ErrorPage
-    //improve About page
+    //add ErrorPage
 
   return (
     <div className="App">
@@ -24,7 +24,8 @@ function App() {
       <Route path='/' exact component={LandingPage}/>
       <Route path='/about' component={About} />
       <Route path='/jobs' component={Jobs}/>
-      <Route path='/candidates' component={Candidates} />
+      <Route path='/candidates' exact component={Candidates} />
+      <Route path='/candidates/:candidateId' component={CandidateProfile} />
       <Route path='/interviews' component={Interview}/>
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register} />

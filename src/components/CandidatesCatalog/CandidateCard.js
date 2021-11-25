@@ -9,6 +9,7 @@ export default function CandidateCard({
                 <li><a href="#"><i className="icon icon-social-twitter"></i></a></li>
                 <li><a href="#"><i className="icon icon-social-facebook"></i></a></li>
                 <li><a href="#"><i className="icon icon-social-dribbble"></i></a></li>
+                <li className="candidate-details"><a href={`/candidates/${candidate._id}`}>PROFILE</a></li>
             </ul>
           </div>
           <div className="team-desc">
