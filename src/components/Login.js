@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Login() {
     return (
         <section id="login">
@@ -18,6 +20,9 @@ export default function Login() {
                             <input className="form-control" id="password" type="password" name="password" />
                         </div>
                         <input type="submit" className="btn btn-primary" value="Login" />
+                        <p className="field">
+                            <span>New to the team? Click <Link to="/register">here</Link></span>
+                        </p>
                     </div>
                 </div>
             </form>
