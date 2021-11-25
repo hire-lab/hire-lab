@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import * as CandidateService from '../../services/CandidateService'
+import * as candidateService from '../../services/CandidateService'
 
 export default function CandidateProfile({
     match
 }) {
     const [candidate, setCandidate] = useState({});
     useEffect(() => {
-        let result = CandidateService.getOne(match.params.candidateId)
-        setCandidate(result)
+        candidateService.getOne(match.params.candidateId)
+        .then(result => {
+            setCandidate(result)
+        })
     }, [])
     return (
         <section className="candidate-profile">
@@ -15,7 +17,7 @@ export default function CandidateProfile({
                 <h3>Name: {candidate.name}</h3>
                 <p className="candidate-profile-email">Email: {candidate.email}</p>
                 <div className="candidate-actions">
-                    <a className="button" href="#">Book an interview</a>                    
+                    <a className="book-button" href="#">Book an interview</a>                    
                 </div>
             </div>
         </section>

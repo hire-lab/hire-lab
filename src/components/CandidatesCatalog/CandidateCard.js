@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function CandidateCard({
   candidate
 }) 
@@ -9,7 +11,7 @@ export default function CandidateCard({
                 <li><a href="#"><i className="icon icon-social-twitter"></i></a></li>
                 <li><a href="#"><i className="icon icon-social-facebook"></i></a></li>
                 <li><a href="#"><i className="icon icon-social-dribbble"></i></a></li>
-                <li className="candidate-details"><a href={`/candidates/${candidate._id}`}>PROFILE</a></li>
+                <Link className="candidate-details" to={`/candidates/${candidate._id}`}>PROFILE </Link>
             </ul>
           </div>
           <div className="team-desc">

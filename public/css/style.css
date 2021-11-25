@@ -859,3 +859,23 @@ cta
 .interview-calendar-info{
     padding-top: 20px;
 }
+
+.candidate-details{
+    background: #03a9f4;;
+}
+
+.candidate-profile{
+    margin: 40px auto;
+    padding: 70px 80px;
+}
+.candidate-profile-email{
+    margin-bottom: 20px
+}
+
+.book-button{
+    border: 1px solid darkgrey;
+    border-radius: 6px;
+    font-size: 15px;
+    padding: 12px;
+    margin-top: 15px;
+}
