@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:5500';
+const baseUrl = 'https://hire-lab-rest-api.herokuapp.com';
 
 export async function getAll(){
     return fetch(`${baseUrl}/jobs`)
