@@ -13,7 +13,6 @@ export default function JobListing({
             <div className="features-text-right">
                 <Link to={`/jobs/${job._id}`}><h3>{job.title}</h3> </Link>                       
                 <p>{job.description}</p>
-                <p>{job.requirements}</p>
             </div>
         </div>
     </div>

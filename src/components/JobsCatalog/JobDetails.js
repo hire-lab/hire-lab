@@ -19,11 +19,11 @@ export default function JobDetails({
         <div className="job-details-information">
             <h3>Title: {job.title}</h3>
             <div className="actions">
-                <Link className="job-details-button" to="/">Edit</Link>
-                <Link className="job-details-button" href="/">Delete</Link>
+                <Link className="job-details-button" to={`/jobs/${job._id}/edit`}>Edit</Link>
+                <Link className="job-details-button" to="/">Delete</Link>
                 
-                <Link className="job-details-button" href="/">Interviews</Link>
-                <Link className="job-details-button" href="/">Candidates</Link>
+                <Link className="job-details-button" to="/">Interviews</Link>
+                <Link className="job-details-button" to="/">Candidates</Link>
             </div>
         </div>
         <div className="job-description">

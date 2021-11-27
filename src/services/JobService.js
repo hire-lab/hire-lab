@@ -23,3 +23,16 @@ export async function create(jobData) {
     let result = response.json();
     return result;
 }
+
+export async function edit(id, jobData) {
+    let response = await fetch(`${baseUrl}/jobs/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(jobData)
+    });
+
+    let result = response.json();
+    return result;
+}
