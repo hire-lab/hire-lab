@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function JobListing({
     job
 }) {
@@ -9,7 +11,7 @@ export default function JobListing({
                 <i className="ion-ios-people-outline front-icon"></i>
             </div>
             <div className="features-text-right">
-                <h3>{job.title}</h3>                        
+                <Link to={`/jobs/${job._id}`}><h3>{job.title}</h3> </Link>                       
                 <p>{job.description}</p>
                 <p>{job.requirements}</p>
             </div>

@@ -889,8 +889,8 @@ cta
     margin-top: 15px;
 }
 
-.addJobButton{
-   
+.addJobButton, 
+.job-details-button {
     padding: 15px;
     color: white;
     font-size: 18px;
@@ -902,4 +902,17 @@ cta
 
 .addJobButton-wrapper{
     margin-top: 50px;
+}
+
+.job-details{
+    margin: 60px auto;
+    padding: 70px 80px;
+}
+
+.actions{
+    margin: 50px;
+}
+
+.job-details-button {
+    margin: 20px;
 }

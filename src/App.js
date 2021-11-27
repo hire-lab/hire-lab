@@ -11,6 +11,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Interview from './components/Interviews';
 import CandidateProfile from './components/CandidatesCatalog/CandidateProfile';
+import JobDetails from './components/JobsCatalog/JobDetails';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
       <Route path='/about' component={About} />
       <Route path='/jobs' exact component={Jobs}/>
       <Route path= '/jobs/create' component={CreateJobListing} />
+      <Route path='/jobs/:jobId' component={JobDetails} />
       <Route path='/candidates' exact component={Candidates} />
       <Route path='/candidates/:candidateId' component={CandidateProfile} />
       <Route path='/interviews' component={Interview}/>
