@@ -4,13 +4,6 @@ import * as jobService from '../../services/JobService';
 
 export default function CreateJobListing() {
     const history = useHistory()
-    /*const [jobs, setJobs] = useState([])
-
-    useEffect(() => {
-        fetch('https://hire-lab-rest-api.herokuapp.com/jobs')
-            .then(res=> res.json())
-            setJobs(jobs)
-    }, [])*/
 
     const createJobHandler = (e) => {
         e.preventDefault();
