@@ -838,6 +838,11 @@ cta
     padding: 70px 80px;
 }
 
+.create-job-page{
+    margin: 40px auto;
+    padding: 70px 80px;
+}
+
 .job-listings {
     display: flex;
     flex-direction: column;
@@ -861,7 +866,7 @@ cta
 }
 
 .candidate-details{
-    background: #03a9f4;;
+    background: #03a9f4;
 }
 
 .candidate-profile{
@@ -882,4 +887,19 @@ cta
 
 .field{
     margin-top: 15px;
+}
+
+.addJobButton{
+   
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    background: #03a9f4;
+    border: none;
+    border-radius: 10px;
+}
+
+.addJobButton-wrapper{
+    margin-top: 50px;
 }

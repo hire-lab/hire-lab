@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import JobListing from "./JobListing";
 import * as JobService from '../../services/JobService';
 
@@ -19,6 +20,9 @@ export default function Jobs() {
                     <div className="section-title">
                         <h1><span className="colored-text"> Job</span> Listings</h1> 
                         <span className="border-line"></span>
+                        <div className='addJobButton-wrapper'>
+                            <Link className='addJobButton' to='/jobs/create'> Add new job listing </Link>
+                        </div>
                     </div>
                 </div>
             </div>

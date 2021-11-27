@@ -6,7 +6,7 @@ export default function JobListing({
         <div>
           <div className="feature-icon-wrap services-icons clearfix">
             <div className="left-side-icon">
-                <i className={job.icon}></i>
+                <i className="ion-ios-people-outline front-icon"></i>
             </div>
             <div className="features-text-right">
                 <h3>{job.title}</h3>                        

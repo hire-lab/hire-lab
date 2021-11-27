@@ -14,15 +14,15 @@ export default function Register() {
                 <div className="row space-top">
                     <div className="col-md-4">
                         <div className="form-group">
-                            <label className="form-control-label" for="email">Email</label>
+                            <label className="form-control-label" htmlFor="email">Email</label>
                             <input className='form-control' id="email" type="text" name="email" />
                         </div>
                         <div className="form-group">
-                            <label className="form-control-label" for="password">Password</label>
+                            <label className="form-control-label" htmlFor="password">Password</label>
                             <input className='form-control' id="password" type="password" name="password" />
                         </div>
                         <div className="form-group">
-                            <label className="form-control-label" for="rePass">Repeat</label>
+                            <label className="form-control-label" htmlFor="rePass">Repeat</label>
                             <input className='form-control' id="rePass" type="password" name="rePass" />
                         </div>
                         <input type="submit" className="btn btn-primary" value="Register" />
