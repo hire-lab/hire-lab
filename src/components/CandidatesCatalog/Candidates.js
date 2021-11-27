@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CandidateCard from "./CandidateCard";
+import { Link } from "react-router-dom"
 import * as CandidateService from '../../services/CandidateService'
 
 export default function Candidates() {
@@ -13,26 +13,29 @@ export default function Candidates() {
     }, [])
 
     return (
-        <div className="team" id="candidates">
-             <div className="container">
-              <div className="row">
-                <div className="col-sm-8 col-sm-offset-2">
-                    <div className="section-title text-center">
-                        <h1> <span className="alo"></span> Candidates</h1> 
+        <section id="services" className="section-padding">
+        <div className="container">
+            <div className="row">
+                <div className="col-sm-8 col-sm-offset-2 text-center">
+                    <div className="section-title">
+                        <h1><span className="colored-text"> Candidates</span></h1> 
                         <span className="border-line"></span>
-                        <p className="lead subtitle-caption">
-                        You are here because people are important to you!
-                        </p>
+                        <div className='addJobButton-wrapper'>
+                            <Link className='addJobButton' to='/jobs/create'> Add new candidate </Link>
+                        </div>
                     </div>
                 </div>
-              </div>
-            <div className="row">
+            </div>
+            <div className="job-listings">
+                <ul>
                 {candidates.length > 0
-                    ? candidates.map(c => <CandidateCard key={c._id} candidate={c} />)
+                    ? candidates.map(c => 
+                        <li key={c._id}> <Link className="candidate-details" to={`/candidates/${c._id}`}><h4>{c.name}</h4></Link></li>)
                     : <h3>There are no candidates at the moment.</h3>
                 }
-            </div>
+                </ul>
             </div>
         </div>
+    </section>
     )
 }
