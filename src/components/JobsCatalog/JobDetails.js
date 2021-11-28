@@ -17,7 +17,12 @@ export default function JobDetails({
     return (
         <section className="job-details">
         <div className="job-details-information">
-            <h3>Title: {job.title}</h3>
+            <h3>Title:</h3>
+            <p>{job.title}</p>
+            <div className="job-description">
+                <h3>Description:</h3>
+                <p>{job.description}</p>
+            </div>
             <div className="actions">
                 <Link className="job-details-button" to={`/jobs/${job._id}/edit`}>Edit</Link>
                 <Link className="job-details-button" to="/">Delete</Link>
@@ -26,10 +31,7 @@ export default function JobDetails({
                 <Link className="job-details-button" to="/">Candidates</Link>
             </div>
         </div>
-        <div className="job-description">
-            <h4>Description:</h4>
-            <p>{job.description}</p>
-        </div>
+       
     </section>
     )
 }

@@ -30,7 +30,7 @@ export default function Candidates() {
                 <ul>
                 {candidates.length > 0
                     ? candidates.map(c => 
-                        <li key={c._id}> <Link className="candidate-details" to={`/candidates/${c._id}`}><h4>{c.name}</h4></Link></li>)
+                        <li className="candidate-details" key={c._id}> <Link className="candidate-details-link" to={`/candidates/${c._id}`}><h4>{c.name}</h4></Link></li>)
                     : <h3>There are no candidates at the moment.</h3>
                 }
                 </ul>

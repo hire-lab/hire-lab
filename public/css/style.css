@@ -866,6 +866,11 @@ cta
 }
 
 .candidate-details{
+    list-style: none;
+    margin: 20px;
+}
+
+.candidate-details-link{
     background: #03a9f4;
 }
 
