@@ -21,7 +21,7 @@ export default function Candidates() {
                         <h1><span className="colored-text"> Candidates</span></h1> 
                         <span className="border-line"></span>
                         <div className='addJobButton-wrapper'>
-                            <Link className='addJobButton' to='/jobs/create'> Add new candidate </Link>
+                            <Link className='addJobButton' to='/candidates/create'> Add new candidate </Link>
                         </div>
                     </div>
                 </div>

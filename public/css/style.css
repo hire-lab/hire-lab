@@ -838,7 +838,8 @@ cta
     padding: 70px 80px;
 }
 
-.create-job-page{
+.create-job-page,
+.add-candidate-page{
     margin: 40px auto;
     padding: 70px 80px;
 }
@@ -925,3 +926,4 @@ cta
 .candidate-card-name{
     margin: 20px;
 }
+

@@ -10,3 +10,16 @@ export async function getOne(id) {
     let result = await fetch(`${baseUrl}/candidates/${id}`);
     return result.json()
 }
+
+export async function create(data){
+    let result = await fetch(`${baseUrl}/candidates`, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    let response = result.json();
+    return response;
+}
