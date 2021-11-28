@@ -9,7 +9,7 @@ import Jobs from "./components/JobsCatalog/Jobs";
 import CreateJobListing from './components/JobsCatalog/CreateJobListing'
 import Register from "./components/Register";
 import Login from "./components/Login";
-import Interview from './components/Interviews';
+import Interview from './components/InterviewsCatalog/Interviews';
 import CandidateProfile from './components/CandidatesCatalog/CandidateProfile';
 import JobDetails from './components/JobsCatalog/JobDetails';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate';
