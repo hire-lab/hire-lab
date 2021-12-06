@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react';
+import {AuthContext} from './contexts/AuthContext';
 import {Route, Switch} from 'react-router-dom'
 
 import Navigation from "./components/Navigation";
@@ -7,18 +9,30 @@ import About from "./components/About";
 import Candidates from "./components/CandidatesCatalog/Candidates";
 import Jobs from "./components/JobsCatalog/Jobs";
 import CreateJobListing from './components/JobsCatalog/CreateJobListing'
-import Register from "./components/Register";
-import Login from "./components/Login";
+import Register from "./components/UserCatalog/Register";
+import Login from "./components/UserCatalog/Login";
 import Interview from './components/InterviewsCatalog/Interviews';
 import CandidateProfile from './components/CandidatesCatalog/CandidateProfile';
 import JobDetails from './components/JobsCatalog/JobDetails';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate';
 
 function App() {
-
     //add ErrorPage
 
+    const [user, setUser] = useState({
+      _id: '',
+      accessToken: '',
+      email: '',
+      name: ''
+    });
+
+    const login = (authData) => {
+      setUser(authData)
+    }
+
+
   return (
+    <AuthContext.Provider value={{user, login}}>
     <div className="App">
 
     < Navigation />
@@ -37,8 +51,9 @@ function App() {
       <Route path='/register' component={Register} />
     </Switch>
 
-    < Footer />
-    </div>
+      < Footer />
+      </div>
+    </AuthContext.Provider>
   );
 }
 
