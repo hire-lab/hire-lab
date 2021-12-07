@@ -32,7 +32,7 @@ export default function LandingPage() {
 
              
                         <div className="tp-caption slider-button scroll-to" data-x="center" data-y="center" data-voffset="120" data-speed="500" data-start="2400" data-easing="Power4.easeInOut" data-captionhidden="on">
-                            <a className="btn btn-white" href="#about">See more</a>
+                            <a className="btn btn-white" href="/about">See more</a>
                         </div> 
                     </li>
                

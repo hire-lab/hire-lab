@@ -1,8 +1,9 @@
-import {useState} from 'react';
 import {AuthContext} from './contexts/AuthContext';
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom';
 
-import Navigation from "./components/JobsCatalog/Navigation/Navigation";
+import useLocalStorage from './hooks/useLocalStorage';
+
+import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import LandingPage from "./components/Home/LandingPage";
 import About from "./components/About/About";
@@ -16,15 +17,16 @@ import CandidateProfile from './components/CandidatesCatalog/CandidateProfile/Ca
 import JobDetails from './components/JobsCatalog/DetailsJob/JobDetails';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate/AddCandidate';
 
+const initialUserState = {
+  _id: '',
+  accessToken: '',
+  email: '',
+  name: ''
+};
+
 function App() {
     //add ErrorPage
-
-    const [user, setUser] = useState({
-      _id: '',
-      accessToken: '',
-      email: '',
-      name: ''
-    });
+    const [user, setUser] = useLocalStorage('user', initialUserState)
 
     const login = (authData) => {
       setUser(authData)

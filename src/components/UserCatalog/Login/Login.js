@@ -1,7 +1,30 @@
+import { useContext } from "react";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import * as userService from '../../../services/UserService';
+import  {AuthContext} from '../../../contexts/AuthContext';
 import './Login.css'
 
 export default function Login() {
+    const {login} = useContext(AuthContext);
+    const history = useHistory();
+
+    const onLoginHandler = (e) => {
+        e.preventDefault();
+
+        let {email, password} = Object.fromEntries(new FormData(e.currentTarget))
+        
+        userService.login(email, password)
+            .then((authData) => {
+                login(authData)
+                history.push('/jobs')
+            })
+            .catch(err => {
+                //add show notification
+                console.log(err)
+            })
+    }
+
     return (
         <section className="loginPage">
             <article>
@@ -9,7 +32,7 @@ export default function Login() {
                 <p>Please fill all fields.</p>
             </article>
 
-             <form className="loginForm">
+             <form className="loginForm" onSubmit={onLoginHandler} method="POST">
                 <div className="row space-top">
                     <div className="col-md-4">
                         <div className="form-group">
