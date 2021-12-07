@@ -16,6 +16,7 @@ import Interview from './components/InterviewsCatalog/Interviews';
 import CandidateProfile from './components/CandidatesCatalog/CandidateProfile/CandidateProfile';
 import JobDetails from './components/JobsCatalog/DetailsJob/JobDetails';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate/AddCandidate';
+import Logout from './components/UserCatalog/Logout/Logout';
 
 const initialUserState = {
   _id: '',
@@ -32,9 +33,13 @@ function App() {
       setUser(authData)
     }
 
+    const logout = () => {
+      setUser(initialUserState)
+    }
+
 
   return (
-    <AuthContext.Provider value={{user, login}}>
+    <AuthContext.Provider value={{user, login, logout}}>
     <div className="App">
 
     < Navigation />
@@ -51,6 +56,7 @@ function App() {
       <Route path='/interviews' component={Interview}/>
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register} />
+      <Route path='/logout' component={Logout}/>
     </Switch>
 
       < Footer />

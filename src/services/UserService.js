@@ -29,3 +29,11 @@ export const login = async (email, password) => {
         throw jsonResult.message;
     }
 }
+
+export const logout = (token) => {
+    return fetch(`${baseUrl}/users/logout`, {
+        headers: {
+            'X-Authorization': token
+        }
+    })
+}
