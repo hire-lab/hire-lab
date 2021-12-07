@@ -1,0 +1,37 @@
+.errorPage{
+    margin: 40px auto;
+    padding: 70px 80px;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+.errorTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorTitleText{
+    font-size: 80px;
+}
+
+.errorTitleText.zero{
+    color: #03a9f4;
+}
+
+.errorPageText{
+    font-size: 30px;
+}
+
+.errorPageLink{
+    background: #03a9f4;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+}
+
+.errorPageLinkText{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
