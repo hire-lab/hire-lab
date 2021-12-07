@@ -2,10 +2,10 @@ import {useState} from 'react';
 import {AuthContext} from './contexts/AuthContext';
 import {Route, Switch} from 'react-router-dom'
 
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
-import LandingPage from "./components/LandingPage";
-import About from "./components/About";
+import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
+import LandingPage from "./components/Home/LandingPage";
+import About from "./components/About/About";
 import Candidates from "./components/CandidatesCatalog/Candidates";
 import Jobs from "./components/JobsCatalog/Jobs/Jobs";
 import CreateJobListing from './components/JobsCatalog/CreateJob/CreateJobListing'

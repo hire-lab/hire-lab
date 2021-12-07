@@ -832,16 +832,12 @@ cta
 }
 
 
+
 .add-candidate-page{
     margin: 40px auto;
     padding: 70px 80px;
 }
 
-.job-listings {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
 
 .interview-calendar{
     margin: 40px auto;

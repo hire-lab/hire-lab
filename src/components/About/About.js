@@ -8,7 +8,7 @@ export default function About() {
                     <h1><span className="alo">Hire Lab</span></h1> 
                     <span className="border-line"></span>
                     <p className="lead subtitle-caption">
-                    This challenge is real, and it happens so, because:
+                    This challenge of finding the perfect candidate is real, and it happens so, because:
                     </p>
                 </div>
             </div>

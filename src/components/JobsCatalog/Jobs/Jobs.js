@@ -27,7 +27,7 @@ export default function Jobs() {
                     </div>
                 </div>
             </div>
-            <div className="job-listings">
+            <div className="jobListings">
                 {jobs.length > 0
                     ? jobs.map(j => <JobListing key={j._id} job={j} />)
                     : <h3>No job listings yet</h3>
