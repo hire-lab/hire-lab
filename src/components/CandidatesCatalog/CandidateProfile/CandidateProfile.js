@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import * as candidateService from '../../services/CandidateService'
+import * as candidateService from '../../../services/CandidateService';
+import './CandidateProfile.css'
 
 export default function CandidateProfile({
     match
@@ -12,12 +13,12 @@ export default function CandidateProfile({
         })
     }, [])
     return (
-        <section className="candidate-profile">
+        <section className="candidateProfile">
             <div className="candidate-profile-information">
                 <h3>Name: {candidate.name}</h3>
-                <p className="candidate-profile-email">Email: {candidate.email}</p>
+                <p className="candidateProfileEmail">Email: {candidate.email}</p>
                 <div className="candidate-actions">
-                    <a className="book-button" href="#">Book an interview</a>                    
+                    <a className="bookButton" href="#">Book an interview</a>                    
                 </div>
             </div>
         </section>

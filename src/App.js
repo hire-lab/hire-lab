@@ -2,19 +2,19 @@ import {useState} from 'react';
 import {AuthContext} from './contexts/AuthContext';
 import {Route, Switch} from 'react-router-dom'
 
-import Navigation from "./components/Navigation/Navigation";
+import Navigation from "./components/JobsCatalog/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import LandingPage from "./components/Home/LandingPage";
 import About from "./components/About/About";
-import Candidates from "./components/CandidatesCatalog/Candidates";
+import Candidates from "./components/CandidatesCatalog/Candidates/Candidates";
 import Jobs from "./components/JobsCatalog/Jobs/Jobs";
 import CreateJobListing from './components/JobsCatalog/CreateJob/CreateJobListing'
 import Register from "./components/UserCatalog/Register/Register";
 import Login from "./components/UserCatalog/Login/Login";
 import Interview from './components/InterviewsCatalog/Interviews';
-import CandidateProfile from './components/CandidatesCatalog/CandidateProfile';
+import CandidateProfile from './components/CandidatesCatalog/CandidateProfile/CandidateProfile';
 import JobDetails from './components/JobsCatalog/DetailsJob/JobDetails';
-import AddCandidate from './components/CandidatesCatalog/AddCandidate';
+import AddCandidate from './components/CandidatesCatalog/AddCandidate/AddCandidate';
 
 function App() {
     //add ErrorPage

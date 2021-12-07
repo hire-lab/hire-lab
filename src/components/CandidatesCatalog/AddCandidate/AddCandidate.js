@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router';
-import * as CandidateService from '../../services/CandidateService';
+import * as CandidateService from '../../../services/CandidateService';
+import './AddCandidate.css'
 
 export default function AddCandidate(){
     const history = useHistory()
@@ -21,7 +22,7 @@ export default function AddCandidate(){
 
 
     return (
-        <section className="add-candidate-page">
+        <section className="addCandidatePage">
         <article>
             <h1>Add new candidate</h1>
         </article>

@@ -832,13 +832,6 @@ cta
 }
 
 
-
-.add-candidate-page{
-    margin: 40px auto;
-    padding: 70px 80px;
-}
-
-
 .interview-calendar{
     margin: 40px auto;
     padding: 70px 80px;
@@ -853,35 +846,6 @@ cta
 
 .interview-calendar-info{
     padding-top: 20px;
-}
-
-.candidate-details{
-    list-style: none;
-    margin: 20px;
-}
-
-.candidate-details-link{
-    background: #03a9f4;
-}
-
-.candidate-profile{
-    margin: 40px auto;
-    padding: 70px 80px;
-}
-.candidate-profile-email{
-    margin-bottom: 20px
-}
-
-.book-button{
-    border: 1px solid darkgrey;
-    border-radius: 6px;
-    font-size: 15px;
-    padding: 12px;
-    margin-top: 15px;
-}
-
-.actions{
-    margin: 50px;
 }
 
 
