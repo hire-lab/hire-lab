@@ -1,0 +1,13 @@
+.addJobButton{
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    background: #03a9f4;
+    border: none;
+    border-radius: 10px;
+}
+
+.addJobButtonWrapper{
+    margin-top: 50px;
+}

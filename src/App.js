@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {AuthContext} from './contexts/AuthContext';
 import {Route, Switch} from 'react-router-dom'
 
@@ -7,13 +7,13 @@ import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
 import Candidates from "./components/CandidatesCatalog/Candidates";
-import Jobs from "./components/JobsCatalog/Jobs";
-import CreateJobListing from './components/JobsCatalog/CreateJobListing'
-import Register from "./components/UserCatalog/Register";
-import Login from "./components/UserCatalog/Login";
+import Jobs from "./components/JobsCatalog/Jobs/Jobs";
+import CreateJobListing from './components/JobsCatalog/CreateJob/CreateJobListing'
+import Register from "./components/UserCatalog/Register/Register";
+import Login from "./components/UserCatalog/Login/Login";
 import Interview from './components/InterviewsCatalog/Interviews';
 import CandidateProfile from './components/CandidatesCatalog/CandidateProfile';
-import JobDetails from './components/JobsCatalog/JobDetails';
+import JobDetails from './components/JobsCatalog/DetailsJob/JobDetails';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate';
 
 function App() {

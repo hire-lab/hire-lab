@@ -1,5 +1,6 @@
 import {useHistory} from 'react-router-dom'
-import * as JobService from '../../services/JobService';
+import * as JobService from '../../../services/JobService';
+import './CreateJobListing.css'
 
 export default function CreateJobListing() {
     const history = useHistory()
@@ -19,7 +20,7 @@ export default function CreateJobListing() {
         })
     }
     return (
-        <section className="create-job-page">
+        <section className="createJobPage">
             <article>
                 <h1>Add new job listing</h1>
             </article>

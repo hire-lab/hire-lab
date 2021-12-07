@@ -831,14 +831,7 @@ cta
     color: #03a9f4;
 }
 
-#login,
-#register 
- {
-    margin: 40px auto;
-    padding: 70px 80px;
-}
 
-.create-job-page,
 .add-candidate-page{
     margin: 40px auto;
     padding: 70px 80px;
@@ -891,37 +884,10 @@ cta
     margin-top: 15px;
 }
 
-.field{
-    margin-top: 15px;
-}
-
-.addJobButton, 
-.job-details-button {
-    padding: 15px;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    background: #03a9f4;
-    border: none;
-    border-radius: 10px;
-}
-
-.addJobButton-wrapper{
-    margin-top: 50px;
-}
-
-.job-details{
-    margin: 60px auto;
-    padding: 70px 80px;
-}
-
 .actions{
     margin: 50px;
 }
 
-.job-details-button {
-    margin: 20px;
-}
 
 .candidate-card-name{
     margin: 20px;

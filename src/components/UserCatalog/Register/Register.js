@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import * as authService from '../../services/UserService';
-import { AuthContext } from "../../contexts/AuthContext";
+import * as authService from '../../../services/UserService';
+import { AuthContext } from "../../../contexts/AuthContext";
+import './Register.css'
 
 export default function Register() {
     const history = useHistory();
@@ -20,7 +21,7 @@ export default function Register() {
     }
 
     return (
-        <section id="register">
+        <section className="registerPage">
             <div className="row space-top">
                 <div className="col-md-12">
                     <h1>Register New User</h1>
