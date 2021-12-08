@@ -1,4 +1,4 @@
-import {AuthContext} from './contexts/AuthContext';
+import {AuthProvider} from './contexts/AuthContext';
 import {Route, Switch} from 'react-router-dom';
 
 import useLocalStorage from './hooks/useLocalStorage';
@@ -40,7 +40,7 @@ function App() {
 
 
   return (
-    <AuthContext.Provider value={{user, login, logout}}>
+    <AuthProvider>
     <div className="App">
 
     < Navigation />
@@ -63,7 +63,7 @@ function App() {
 
       < Footer />
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
