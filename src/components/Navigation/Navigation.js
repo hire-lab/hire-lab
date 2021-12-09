@@ -7,7 +7,7 @@ export default function Navigation () {
 
     let userNavigation = (
         <ul className="nav navbar-nav navbar-right scroll-to">
-            <li><Link to="/about">About</Link></li>
+            <li><a>Welcome, {user.name}</a></li>
             <li><Link to="/jobs">Jobs</Link></li>
             <li><Link to="/candidates">Candidates</Link></li>
             <li><Link to="/interviews">Interviews</Link></li>
