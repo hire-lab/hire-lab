@@ -1,8 +1,6 @@
 import {AuthProvider} from './contexts/AuthContext';
 import {Route, Switch} from 'react-router-dom';
 
-import useLocalStorage from './hooks/useLocalStorage';
-
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import LandingPage from "./components/Home/LandingPage";
@@ -19,26 +17,9 @@ import AddCandidate from './components/CandidatesCatalog/AddCandidate/AddCandida
 import Logout from './components/UserCatalog/Logout/Logout';
 import NotFound from './components/NotFound/NotFound'
 
-const initialUserState = {
-  _id: '',
-  accessToken: '',
-  email: '',
-  name: ''
-};
 
 function App() {
-    //add ErrorPage
-    const [user, setUser] = useLocalStorage('user', initialUserState)
-
-    const login = (authData) => {
-      setUser(authData)
-    }
-
-    const logout = () => {
-      setUser(initialUserState)
-    }
-
-
+    
   return (
     <AuthProvider>
     <div className="App">
