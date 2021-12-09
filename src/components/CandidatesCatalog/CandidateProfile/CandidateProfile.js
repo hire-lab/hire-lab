@@ -26,5 +26,4 @@ const CandidateProfile = ({
     )
 }
 
-const AuthCandidateProfile = isAuth(CandidateProfile);
-export default AuthCandidateProfile;
+export default isAuth(CandidateProfile);

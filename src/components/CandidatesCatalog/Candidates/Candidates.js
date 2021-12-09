@@ -42,6 +42,4 @@ const Candidates = () => {
     )
 }
 
-const AuthCandidates = isAuth(Candidates)
-
-export default AuthCandidates;
+export default isAuth(Candidates)
