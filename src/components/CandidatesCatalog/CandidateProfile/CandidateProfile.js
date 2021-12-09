@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+import { isAuth } from "../../../hoc/isAuth";
 import * as candidateService from '../../../services/CandidateService';
 import './CandidateProfile.css'
 
-export default function CandidateProfile({
+const CandidateProfile = ({
     match
-}) {
+}) =>  {
     const [candidate, setCandidate] = useState({});
     useEffect(() => {
         candidateService.getOne(match.params.candidateId)
@@ -24,3 +25,6 @@ export default function CandidateProfile({
         </section>
     )
 }
+
+const AuthCandidateProfile = isAuth(CandidateProfile);
+export default AuthCandidateProfile;

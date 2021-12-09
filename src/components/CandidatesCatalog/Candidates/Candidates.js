@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { isAuth } from "../../../hoc/isAuth";
 import * as CandidateService from '../../../services/CandidateService';
 import './Candidates.css'
 
-export default function Candidates() {
+const Candidates = () => {
     const [candidates, setCandidates] = useState([]);
 
     useEffect(() => {
@@ -40,3 +41,7 @@ export default function Candidates() {
     </section>
     )
 }
+
+const AuthCandidates = isAuth(Candidates)
+
+export default AuthCandidates;

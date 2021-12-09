@@ -1,8 +1,9 @@
 import { useHistory } from 'react-router';
+import { isAuth } from "../../../hoc/isAuth";
 import * as CandidateService from '../../../services/CandidateService';
 import './AddCandidate.css'
 
-export default function AddCandidate(){
+const AddCandidate = () => {
     const history = useHistory()
     
     const addCandidateHandler = (e) => {
@@ -44,3 +45,7 @@ export default function AddCandidate(){
 </section>
     )
 }
+
+const AuthAddCandidate = isAuth(AddCandidate)
+
+export default AuthAddCandidate;
