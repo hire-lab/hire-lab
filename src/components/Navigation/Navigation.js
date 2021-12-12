@@ -1,26 +1,27 @@
 import { useContext } from 'react';
 import {Link} from 'react-router-dom';
-import {AuthContext} from '../../contexts/AuthContext'
+import {AuthContext} from '../../contexts/AuthContext';
+import './Navigation.css'
 
 export default function Navigation () {
     const {user} = useContext(AuthContext);
 
     let userNavigation = (
         <ul className="nav navbar-nav navbar-right scroll-to">
-            <li><a>Welcome, {user.name}</a></li>
-            <li><Link to="/jobs">Jobs</Link></li>
-            <li><Link to="/candidates">Candidates</Link></li>
-            <li><Link to="/interviews">Interviews</Link></li>
-            <li><Link to="/logout">Logout</Link></li>                      
+            <li className='homeNav'><a>Welcome, {user.name}</a></li>
+            <li className='homeNav'><Link to="/jobs">Jobs</Link></li>
+            <li className='homeNav'><Link to="/candidates">Candidates</Link></li>
+            <li className='homeNav'><Link to="/interviews">Interviews</Link></li>
+            <li className='homeNav'><Link to="/logout">Logout</Link></li>                      
         </ul>
     );
 
     let guestNavigation = (
         <ul className="nav navbar-nav navbar-right scroll-to">
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/jobs">Jobs</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/register">Register</Link></li>                  
+            <li className='homeNav'><Link to="/about">About</Link></li>
+            <li className='homeNav'><Link to="/jobs">Jobs</Link></li>
+            <li className='homeNav'><Link to="/login">Login</Link></li>
+            <li className='homeNav'><Link to="/register">Register</Link></li>                  
         </ul>
     )
     return (
@@ -33,7 +34,7 @@ export default function Navigation () {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand alo" to="/jobs">Hire Lab</Link>
+                <Link className="navbar-brand alo" to="/">Hire Lab</Link>
             </div>
             <div id="navbar" className="navbar-collapse collapse">
                 {user.email
