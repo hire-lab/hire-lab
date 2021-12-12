@@ -20,7 +20,7 @@ export default function JobDetails() {
         <section className="jobDetails">
         <div className="job-details-information">
             <h3>Title:</h3>
-            <p>{job.title}</p>
+            <h1>{job.title}</h1>
             <div className="job-description">
                 <h3>Description:</h3>
                 <p>{job.description}</p>
