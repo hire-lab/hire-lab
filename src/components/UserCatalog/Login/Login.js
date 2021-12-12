@@ -27,9 +27,8 @@ export default function Login() {
 
     return (
         <section className="loginPage">
-            <article>
+            <article className="loginPageTitle">
                  <h1>Login User</h1>
-                <p>Please fill all fields.</p>
             </article>
 
              <form className="loginForm" onSubmit={onLoginHandler} method="POST">

@@ -23,9 +23,8 @@ export default function Register() {
     return (
         <section className="registerPage">
             <div className="row space-top">
-                <div className="col-md-12">
+                <div className="col-md-12 registerPageTitle">
                     <h1>Register New User</h1>
-                    <p>Please fill all fields.</p>
                 </div>
             </div>
             <div className="form-wrapper">
