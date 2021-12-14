@@ -18,10 +18,10 @@ export default function JobDetails() {
 
     return (
         <section className="jobDetails">
-        <div className="job-details-information">
+        <div className="jobDetailsInformation">
             <h3>Title:</h3>
             <h1>{job.title}</h1>
-            <div className="job-description">
+            <div className="jobDescription">
                 <h3>Description:</h3>
                 <p>{job.description}</p>
             </div>
