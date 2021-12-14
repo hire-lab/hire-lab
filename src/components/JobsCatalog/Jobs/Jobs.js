@@ -1,17 +1,26 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {useAuthContext} from '../../../contexts/AuthContext';
 import JobListing from "../JobListing/JobListing";
 import * as JobService from '../../../services/JobService';
 import './Jobs.css'
 
 export default function Jobs() {
     const [jobs, setJobs] = useState([]);
+    const {user} = useAuthContext();
+
     useEffect(() => {
         JobService.getAll()
             .then(result => {
                 setJobs(result)
             })
     }, [])
+
+    const addJobButton = (
+        <div className='addJobButtonWrapper'>
+            <Link className='addJobButton' to='/jobs/create'> Add new job listing </Link>
+        </div>
+    )
 
     return (
         <section id="services" className="section-padding">
@@ -21,9 +30,12 @@ export default function Jobs() {
                     <div className="section-title">
                         <h1><span className="colored-text"> Job</span> Listings</h1> 
                         <span className="border-line"></span>
-                        <div className='addJobButtonWrapper'>
-                            <Link className='addJobButton' to='/jobs/create'> Add new job listing </Link>
-                        </div>
+
+                        {user.email
+                            ? addJobButton
+                            : null
+                        }
+                        
                     </div>
                 </div>
             </div>

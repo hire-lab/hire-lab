@@ -1,9 +1,11 @@
 import {useHistory} from 'react-router-dom'
 import * as JobService from '../../../services/JobService';
+import {useAuthContext} from '../../../contexts/AuthContext'
 import './CreateJobListing.css'
 
 export default function CreateJobListing() {
-    const history = useHistory()
+    const history = useHistory();
+    const {user} = useAuthContext();
 
     const createJobHandler = (e) => {
         e.preventDefault();
@@ -15,8 +17,9 @@ export default function CreateJobListing() {
         JobService.create({
             title,
             description
-        }).then(result => {
-            history.push('/jobs')
+        }, user.accessToken)
+            .then(result => {
+                history.push('/jobs')
         })
     }
     return (
