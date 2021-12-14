@@ -42,5 +42,5 @@ export const del = (jobId, token) => {
         headers: {
             'X-Authorization': token
         }
-    }).then(res => res.json())
+    })
 }

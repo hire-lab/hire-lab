@@ -1,13 +1,24 @@
 import { Link, useParams, useHistory} from "react-router-dom";
 import useJobState from '../../../hooks/useJobState';
 import { useAuthContext } from "../../../contexts/AuthContext";
+import * as jobService from '../../../services/JobService';
 import './JobDetails.css';
 
 export default function JobDetails() {
     const history = useHistory();
     let {jobId} = useParams()
     const {user} = useAuthContext();
-    const [job, setJob] = useJobState(jobId)
+    const [job, setJob] = useJobState(jobId);
+
+    //add confirm dialog
+    const deleteHandler = (e) => {
+        e.preventDefault();
+
+        jobService.del(jobId, user.accessToken)
+            .then(() => {
+                history.push('/jobs')
+            })
+    }
 
     return (
         <section className="jobDetails">
@@ -20,7 +31,7 @@ export default function JobDetails() {
             </div>
             <div className="actions">
                 <Link className="jobDetailsButton" to={`/jobs/${job._id}/edit`}>Edit</Link>
-                <Link className="jobDetailsButton" to='#'>Delete</Link>
+                <Link className="jobDetailsButton" to='#' onClick={deleteHandler}>Delete</Link>
                 
                 <Link className="jobDetailsButton" to="/">Interviews</Link>
                 <Link className="jobDetailsButton" to="/">Candidates</Link>
