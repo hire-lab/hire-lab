@@ -1,22 +1,13 @@
-import { useState, useEffect} from "react";
 import { Link, useParams, useHistory} from "react-router-dom";
-import * as JobService from '../../../services/JobService';
+import useJobState from '../../../hooks/useJobState';
 import { useAuthContext } from "../../../contexts/AuthContext";
-import './JobDetails.css'
+import './JobDetails.css';
 
 export default function JobDetails() {
     const history = useHistory();
-    const [job, setJob] = useState({})
     let {jobId} = useParams()
-    const {user} = useAuthContext()
-
-    useEffect(() => {
-        JobService.getOne(jobId)
-            .then(result => {
-                setJob(result)
-            })
-    }, [jobId])
-
+    const {user} = useAuthContext();
+    const [job, setJob] = useJobState(jobId)
 
     return (
         <section className="jobDetails">
