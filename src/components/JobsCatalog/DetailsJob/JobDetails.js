@@ -1,13 +1,14 @@
-import { useState, useEffect, useContext } from "react";
-import { Link, useParams} from "react-router-dom";
+import { useState, useEffect} from "react";
+import { Link, useParams, useHistory} from "react-router-dom";
 import * as JobService from '../../../services/JobService';
-import { AuthContext } from "../../../contexts/AuthContext";
+import { useAuthContext } from "../../../contexts/AuthContext";
 import './JobDetails.css'
 
 export default function JobDetails() {
-    const {user} = useContext(AuthContext)
+    const history = useHistory();
     const [job, setJob] = useState({})
     let {jobId} = useParams()
+    const {user} = useAuthContext()
 
     useEffect(() => {
         JobService.getOne(jobId)
@@ -15,6 +16,7 @@ export default function JobDetails() {
                 setJob(result)
             })
     }, [jobId])
+
 
     return (
         <section className="jobDetails">
@@ -27,13 +29,13 @@ export default function JobDetails() {
             </div>
             <div className="actions">
                 <Link className="jobDetailsButton" to={`/jobs/${job._id}/edit`}>Edit</Link>
-                <Link className="jobDetailsButton" to="/">Delete</Link>
+                <Link className="jobDetailsButton" to='#'>Delete</Link>
                 
                 <Link className="jobDetailsButton" to="/">Interviews</Link>
                 <Link className="jobDetailsButton" to="/">Candidates</Link>
             </div>
         </div>
        
-    </section>
+      </section>
     )
 }

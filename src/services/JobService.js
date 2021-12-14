@@ -22,7 +22,7 @@ export async function create(jobData) {
     return result;
 }
 
-export async function edit(id, jobData) {
+/*export async function edit(id, jobData) {
     let response = await fetch(`${baseUrl}/jobs/${id}`, {
         method: 'PUT',
         headers: {
@@ -33,4 +33,14 @@ export async function edit(id, jobData) {
 
     let result = response.json();
     return result;
+}*/
+
+
+export const del = (jobId, token) => {
+    return fetch(`${baseUrl}/jobs/${jobId}`, {
+        method: 'DELETE',
+        headers: {
+            'X-Authorization': token
+        }
+    }).then(res => res.json())
 }

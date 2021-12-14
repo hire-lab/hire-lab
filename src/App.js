@@ -15,7 +15,7 @@ import CandidateProfile from './components/CandidatesCatalog/CandidateProfile/Ca
 import JobDetails from './components/JobsCatalog/DetailsJob/JobDetails';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate/AddCandidate';
 import Logout from './components/UserCatalog/Logout/Logout';
-import NotFound from './components/NotFound/NotFound'
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
