@@ -20,6 +20,16 @@ export default function JobDetails() {
             })
     }
 
+    const authButtons = (
+        <div className="actions">
+            <Link className="jobDetailsButton" to={`/jobs/${job._id}/edit`}>Edit</Link>
+            <Link className="jobDetailsButton" to='#' onClick={deleteHandler}>Delete</Link>
+                
+            <Link className="jobDetailsButton" to="#">Interviews</Link>
+            <Link className="jobDetailsButton" to="#">Candidates</Link>
+        </div>
+    )
+
     return (
         <section className="jobDetails">
         <div className="jobDetailsInformation">
@@ -29,13 +39,13 @@ export default function JobDetails() {
                 <h3>Description:</h3>
                 <p>{job.description}</p>
             </div>
-            <div className="actions">
-                <Link className="jobDetailsButton" to={`/jobs/${job._id}/edit`}>Edit</Link>
-                <Link className="jobDetailsButton" to='#' onClick={deleteHandler}>Delete</Link>
-                
-                <Link className="jobDetailsButton" to="/">Interviews</Link>
-                <Link className="jobDetailsButton" to="/">Candidates</Link>
-            </div>
+
+            {user.email
+                ? authButtons
+                : null
+            }
+
+
         </div>
        
       </section>
