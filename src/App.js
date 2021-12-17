@@ -1,5 +1,6 @@
-import {AuthProvider} from './contexts/AuthContext';
 import {Route, Switch} from 'react-router-dom';
+
+import {AuthProvider} from './contexts/AuthContext';
 
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
@@ -14,9 +15,9 @@ import Interview from './components/InterviewsCatalog/Interviews';
 import CandidateProfile from './components/CandidatesCatalog/CandidateProfile/CandidateProfile';
 import JobDetails from './components/JobsCatalog/DetailsJob/JobDetails';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate/AddCandidate';
+import EditJob from './components/JobsCatalog/EditJob/EditJob';
 import Logout from './components/UserCatalog/Logout/Logout';
 import NotFound from './components/NotFound/NotFound';
-
 
 function App() {
     
@@ -31,7 +32,8 @@ function App() {
       <Route path='/about' component={About} />
       <Route path='/jobs' exact component={Jobs}/>
       <Route path= '/jobs/create' component={CreateJobListing} />
-      <Route path='/jobs/:jobId' component={JobDetails} />
+      <Route path='/jobs/:jobId' exact component={JobDetails} />
+      <Route path='/jobs/edit/:jobId' component={EditJob}/>
       <Route path='/candidates' exact component={Candidates} />
       <Route path='/candidates/create' component={AddCandidate}/>
       <Route path='/candidates/:candidateId' component={CandidateProfile} />

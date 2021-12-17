@@ -1,8 +1,8 @@
-import {request} from './requester';
+import * as request from './requester';
 //const baseUrl = 'https://hire-lab-rest-api.herokuapp.com';
 const baseUrl = 'http://localhost:5555';
 
-export const getAll = () => request(`${baseUrl}/jobs`);
+export const getAll = () => request.get(`${baseUrl}/jobs`);
 
 export async function getOne(id){
     let result = await fetch(`${baseUrl}/jobs/${id}`);
@@ -22,18 +22,7 @@ export async function create(jobData) {
     return result;
 }
 
-/*export async function edit(id, jobData) {
-    let response = await fetch(`${baseUrl}/jobs/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify(jobData)
-    });
-
-    let result = response.json();
-    return result;
-}*/
+export const update = (jobId, jobData) => request.put(`${baseUrl}/jobs/${jobId}`, jobData)
 
 
 export const del = (jobId, token) => {

@@ -42,6 +42,6 @@ export default function CreateJobListing() {
                     </div>
                 </div>
             </form>
-    </section>
+        </section>
     )
 }

@@ -10,7 +10,6 @@ export default function JobDetails() {
     const {user} = useAuthContext();
     const [job, setJob] = useJobState(jobId);
 
-    //add confirm dialog
     const deleteHandler = (e) => {
         e.preventDefault();
 
@@ -22,7 +21,7 @@ export default function JobDetails() {
 
     const authButtons = (
         <div className="actions">
-            <Link className="jobDetailsButton" to={`/jobs/${job._id}/edit`}>Edit</Link>
+            <Link className="jobDetailsButton" to={`/jobs/edit/${job._id}`}>Edit</Link>
             <Link className="jobDetailsButton" to='#' onClick={deleteHandler}>Delete</Link>
                 
             <Link className="jobDetailsButton" to="#">Interviews</Link>
