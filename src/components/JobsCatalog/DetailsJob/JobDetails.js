@@ -3,12 +3,20 @@ import useJobState from '../../../hooks/useJobState';
 import { useAuthContext } from "../../../contexts/AuthContext";
 import * as jobService from '../../../services/JobService';
 import './JobDetails.css';
+import { useEffect } from "react";
 
 export default function JobDetails() {
     const history = useHistory();
     let {jobId} = useParams()
     const {user} = useAuthContext();
     const [job, setJob] = useJobState(jobId);
+
+    useEffect(() => {
+        jobService.getOne(jobId)
+            .then(state => {
+                setJob(state)
+            })
+    })
 
     const deleteHandler = (e) => {
         e.preventDefault();
