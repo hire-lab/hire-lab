@@ -15,6 +15,6 @@ export default function JobListing({
                 <p>{job.description}</p>
             </div>
         </div>
-    </div>
+        </div>
     )
 }

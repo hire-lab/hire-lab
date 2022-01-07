@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {useAuthContext} from '../../../contexts/AuthContext';
-import JobListing from "../JobListing/JobListing";
+import JobListing from '../JobListing/JobListing'
 import * as JobService from '../../../services/JobService';
 import './Jobs.css'
 
@@ -13,6 +13,8 @@ export default function Jobs() {
         JobService.getAll()
             .then(result => {
                 setJobs(result)
+            }).catch(err => {
+                console.log(err)
             })
     }, [])
 
@@ -40,11 +42,11 @@ export default function Jobs() {
                 </div>
             </div>
             <div className="jobListings">
-                {jobs.length > 0
-                    ? jobs.map(j => <JobListing key={j._id} job={j} />)
-                    : <h3>No job listings yet</h3>
-                }
-            </div>
+            {jobs.length > 0
+                ? jobs.map(j => <JobListing key={j._id} job={j} />)
+                : <h3>No job listings yet</h3>
+            }
+        </div>
         </div>
     </section>
     )

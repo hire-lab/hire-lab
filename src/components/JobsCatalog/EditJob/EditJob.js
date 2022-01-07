@@ -9,11 +9,11 @@ export default function Edit() {
 
     const onEditSubmitHandler = (e) => {
         e.preventDefault();
-
+    
         let jobData = Object.fromEntries(new FormData(e.currentTarget))
-        jobService.update(job._id, jobData);
+        jobService.update(job._id, jobData)
 
-        history.push('/jobs')
+        history.push(`/jobs/${jobId}`)
     }
 
     return (
