@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import * as interviewService from '../../services/InterviewSevice'
+import * as interviewService from '../../services/InterviewService'
 
 export default function Interview(){
     const [interviews, setInterviews] = useState([]);

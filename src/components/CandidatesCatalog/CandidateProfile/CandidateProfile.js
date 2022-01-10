@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { isAuth } from "../../../hoc/isAuth";
 import * as jobService from '../../../services/JobService';
 import * as candidateService from '../../../services/CandidateService';
-import * as interviewService from '../../../services/InterviewSevice';
+import * as interviewService from '../../../services/InterviewService';
 import './CandidateProfile.css'
 
 const CandidateProfile = ({
@@ -11,14 +12,16 @@ const CandidateProfile = ({
 }) =>  {
     const [candidate, setCandidate] = useState({});
     const [jobs, setJobs] = useState([]);
-    let [selectedJob, setSelectedJob] = useState([])
+    let [jobId, setSelectedJob] = useState([])
+    const history = useHistory()
+    const candidateId = match.params.candidateId;
 
     useEffect(() => {
-        candidateService.getOne(match.params.candidateId)
+        candidateService.getOne(candidateId)
         .then(result => {
             setCandidate(result)
         })
-    }, [])
+    }, [candidateId])
 
     useEffect(() => {
         jobService.getAll()
@@ -28,13 +31,22 @@ const CandidateProfile = ({
     }, [])
 
     const onSelectJob = (e) => {
-        selectedJob = e.target.value;
-        setSelectedJob(selectedJob)
+        jobId = e.target.value;
+        setSelectedJob(jobId)
     }
 
-    /*const onBookBtnClick = () => {
-        interviewService.bookInterview(match.params.candidateId, selectedJob)
-    }*/
+    const onBookBtnClick = () => {
+        const interviewData = {
+            jobId,
+            candidateId
+        }
+        interviewService.bookInterview(interviewData)
+            .then(result => {
+                
+                history.push('/interviews')
+            })
+ 
+    }
 
     return (
         <section className="candidateProfile">
@@ -44,7 +56,8 @@ const CandidateProfile = ({
                 <p className="field">
                     <label htmlFor="availableJobs">Available Jobs</label>
                     <span className="input">
-                        <select id="availableJobs" name="availableJobs" onChange={onSelectJob}>
+                        <select id="availableJobs" name="availableJobs" onChange={onSelectJob} >
+                            <option disabled={true}>Please select:</option>
 
                             {jobs.map(j => 
                                 <option key={j._id} value={j._id}>{j.title}</option>
@@ -54,7 +67,7 @@ const CandidateProfile = ({
                     </span>
                 </p>
                 <div className="candidateActions">
-                    <Link className="bookButton" to="#">Book an interview</Link>                    
+                    <Link className="bookButton" to="#" onClick={onBookBtnClick}>Book an interview</Link>                    
                 </div>
             </div>
         </section>
