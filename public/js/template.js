@@ -36,14 +36,14 @@ jQuery(document).ready(function() {
 
 });	//ready
 
-  $(window).load(function() {
+  /*$(window).load(function() {
     $('.testislider').flexslider({
         direction: "horizantol",
         animation: "slide",
         smoothHeight: true,
         controlNav: false
     });
-  });
+  });*/
 
 /**smooth scroll on anchor tag****/
 $(function() {
@@ -64,27 +64,18 @@ $(function() {
 
 /* -------------------
  Parallax Sections
- ---------------------*/
+ 
 if (!Modernizr.touch) {
     $('.parallax-1').parallax("50%", 0.5);
     $('.parallax-2').parallax("50%", 0.5);
     $('.parallax-3').parallax("50%", 0.5);
 }
+---------------------*/
 /*----------------
  Auto Close Navbar
  -----------------*/
-function close_toggle() {
-    if ($(window).width() <= 992) {
-        $('.navbar-collapse a').on('click', function() {
-            $('.navbar-collapse').collapse('hide');
-        });
-    }
-    else {
-        $('.navbar .navbar-default a').off('click');
-    }
-}
-close_toggle();
-$(window).resize(close_toggle);
+
+
 $(".navbar-collapse").css({maxHeight: $(window).height() - $(".navbar-header").height() + "px"});
 $(function() {
     $('.navbar-toggle').bind('click', function(event) {
@@ -98,8 +89,3 @@ $(function() {
 
 
 
-/**prettyPhoto**/
-$(window).load(function(){
- "use strict";
-    $("a[data-gal^='prettyPhoto']").prettyPhoto();
-  });

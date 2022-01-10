@@ -32,9 +32,9 @@ const CandidateProfile = ({
         setSelectedJob(selectedJob)
     }
 
-    const onBookBtnClick = () => {
+    /*const onBookBtnClick = () => {
         interviewService.bookInterview(match.params.candidateId, selectedJob)
-    }
+    }*/
 
     return (
         <section className="candidateProfile">
@@ -54,7 +54,7 @@ const CandidateProfile = ({
                     </span>
                 </p>
                 <div className="candidateActions">
-                    <Link className="bookButton" to="#" onClick={onBookBtnClick}>Book an interview</Link>                    
+                    <Link className="bookButton" to="#">Book an interview</Link>                    
                 </div>
             </div>
         </section>
