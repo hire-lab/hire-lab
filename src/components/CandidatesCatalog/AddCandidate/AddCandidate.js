@@ -17,6 +17,7 @@ const AddCandidate = () => {
             name,
             email
         }).then(result => {
+            //result.message == error message!
             history.push('/candidates')
         })
     }

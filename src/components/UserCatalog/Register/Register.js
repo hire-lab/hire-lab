@@ -15,8 +15,15 @@ export default function Register() {
         let {email, name, password} = Object.fromEntries(new FormData(e.currentTarget));
         authService.register(email, name, password)
             .then(authData => {
-                login(authData)
-                history.push('/jobs')
+                //error message = authData.message
+
+                if (authData.accessToken) {
+                    login(authData)
+                    history.push('/jobs')
+                } else {
+                    console.log(authData.message)
+                }
+                
             })
     }
 
