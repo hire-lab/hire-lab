@@ -12,6 +12,9 @@ export default function Edit() {
     
         let jobData = Object.fromEntries(new FormData(e.currentTarget))
         jobService.update(job._id, jobData)
+            .then(res => {
+                setJob(res)
+            })
 
         history.push(`/jobs/${jobId}`)
     }
