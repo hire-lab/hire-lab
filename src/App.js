@@ -39,7 +39,7 @@ function App() {
       <Route path='/candidates/create' component={AddCandidate}/>
       <Route path='/candidates/:candidateId' component={CandidateProfile} />
       <Route path='/interviews' exact component={Interview}/>
-      <Route path='/interviews/:jobId' component={InterviewByJobId} />
+      <Route path='/interviews/:jobId' exact component={InterviewByJobId} />
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register} />
       <Route path='/logout' component={Logout}/>
