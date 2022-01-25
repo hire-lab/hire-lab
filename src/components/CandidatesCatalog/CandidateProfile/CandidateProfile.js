@@ -42,8 +42,10 @@ const CandidateProfile = ({
         }
         interviewService.bookInterview(interviewData)
             .then(result => {
-                
                 history.push('/interviews')
+                return () => {
+                    setCandidate({})
+                }
             })
  
     }
@@ -67,7 +69,7 @@ const CandidateProfile = ({
                     </span>
                 </p>
                 <div className="candidateActions">
-                    <Link className="bookButton" to="#" onClick={onBookBtnClick}>Book an interview</Link>                    
+                    <Link className="bookButton" to={`/candidates/${candidateId}/interviews`} onClick={onBookBtnClick}>Book an interview</Link>                    
                 </div>
             </div>
         </section>
