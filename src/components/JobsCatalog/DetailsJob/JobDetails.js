@@ -16,7 +16,7 @@ export default function JobDetails() {
             .then(state => {
                 setJob(state)
             })
-    })
+    }, [job])
 
     const deleteHandler = (e) => {
         e.preventDefault();
