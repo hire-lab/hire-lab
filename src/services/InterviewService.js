@@ -7,6 +7,11 @@ export async function getAll() {
     return result.json()
 }
 
+export async function getByJobId(jobId) {
+    let result = await fetch(`${baseUrl}/interviews/${jobId}`)
+    return result.json()
+}
+
 export async function bookInterview(interviewData) {
     const candidateId = interviewData.candidateId;
     let response = await fetch(`${baseUrl}/candidates/${candidateId}/interviews`, {
