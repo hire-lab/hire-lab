@@ -14,9 +14,9 @@ export default function Edit() {
         jobService.update(job._id, jobData)
             .then(res => {
                 setJob(res)
+                history.push(`/jobs/${jobId}`)
             })
-
-        history.push(`/jobs/${jobId}`)
+        
     }
 
     return (
