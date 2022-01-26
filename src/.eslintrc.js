@@ -1,6 +1,8 @@
 module.exports = {
     extends: 'react-app',
     rules: {
-        'eqeqeq': 'off'
+        'eqeqeq': 'off',
+        'jsx-a11y/anchor-is-valid': 'off',
+        'no-unused-vars': 'off'
     }
 }
