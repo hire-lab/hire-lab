@@ -8,7 +8,7 @@ export default function Footer () {
                 <li><a href="#"><i className="icon icon-social-facebook"></i></a></li>
                 <li><a href="#"><i className="icon icon-social-dribbble"></i></a></li>
             </ul>
-            <span className="copyright">&copy; Copyright Zlatina Moga 2021.</span>
+            <span className="copyright">&copy; Copyright Zlatina Moga 2021</span>
         </div>
     </footer>
     )
