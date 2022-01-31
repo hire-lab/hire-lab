@@ -35,7 +35,7 @@ const CandidateProfile = ({
         setSelectedJob(jobId)
     }
 
-    const onBookBtnClick = () => {
+    const onBookBtnClick = (e) => {
         const interviewData = {
             jobId,
             candidateId
@@ -59,7 +59,7 @@ const CandidateProfile = ({
                     <label htmlFor="availableJobs">Available Jobs</label>
                     <span className="input">
                         <select id="availableJobs" name="availableJobs" onChange={onSelectJob} >
-                            <option disabled={true}>Please select:</option>
+                            <option disabled>Please select:</option>
 
                             {jobs.map(j => 
                                 <option key={j._id} value={j._id}>{j.title}</option>
