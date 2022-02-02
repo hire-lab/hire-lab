@@ -35,20 +35,20 @@ const CandidateProfile = ({
         setSelectedJob(jobId)
     }
 
-    const onBookBtnClick = (e) => {
+    /*const onBookBtnClick = (e) => {
         const interviewData = {
             jobId,
             candidateId
         }
-        interviewService.bookInterview(interviewData)
+        interviewService.bookInterview(jobId)
             .then(result => {
-                history.push('/interviews')
+                //history.push('/interviews')
                 return () => {
                     setCandidate({})
                 }
             })
  
-    }
+    }*/
 
     return (
         <section className="candidateProfile">
@@ -69,7 +69,7 @@ const CandidateProfile = ({
                     </span>
                 </p>
                 <div className="candidateActions">
-                    <Link className="bookButton" to={`/candidates/${candidateId}/interviews`} onClick={onBookBtnClick}>Book an interview</Link>                    
+                    <Link className="bookButton" to={`/candidates/${candidateId}/interviews`}>Book an interview</Link>                    
                 </div>
             </div>
         </section>

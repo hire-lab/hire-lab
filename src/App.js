@@ -35,11 +35,11 @@ function App() {
       <Route path= '/jobs/create' component={CreateJobListing} />
       <Route path='/jobs/:jobId' exact component={JobDetails} />
       <Route path='/jobs/edit/:jobId' component={EditJob}/>
+      <Route path='/jobs/:jobId/interviews' exact component={InterviewByJobId} />
       <Route path='/candidates' exact component={Candidates} />
       <Route path='/candidates/create' component={AddCandidate}/>
       <Route path='/candidates/:candidateId' component={CandidateProfile} />
       <Route path='/interviews' exact component={Interview}/>
-      <Route path='/interviews/:jobId' exact component={InterviewByJobId} />
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register} />
       <Route path='/logout' component={Logout}/>

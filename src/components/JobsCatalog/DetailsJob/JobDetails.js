@@ -31,7 +31,7 @@ export default function JobDetails() {
             <Link className="jobDetailsButton" to={`/jobs/edit/${job._id}`}>Edit</Link>
             <Link className="jobDetailsButton" to='#' onClick={deleteHandler}>Delete</Link>
                 
-            <Link className="jobDetailsButton" to={`/interviews/${job._id}`}>Interviews</Link>
+            <Link className="jobDetailsButton" to={`/jobs/${job._id}/interviews`}>Interviews</Link>
             <Link className="jobDetailsButton" to="#">Candidates</Link>
         </div>
     )
