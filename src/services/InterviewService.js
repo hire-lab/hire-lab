@@ -13,8 +13,7 @@ export async function getByJobId(jobId) {
 }
 
 export async function bookInterview(interviewData) {
-    const candidateId = interviewData.candidateId;
-    let response = await fetch(`${baseUrl}/candidates/${candidateId}/interviews`, {
+    let response = await fetch(`${baseUrl}/interviews`, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
