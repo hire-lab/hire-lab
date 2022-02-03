@@ -11,7 +11,8 @@ import Jobs from "./components/JobsCatalog/Jobs/Jobs";
 import CreateJobListing from './components/JobsCatalog/CreateJob/CreateJobListing'
 import Register from "./components/UserCatalog/Register/Register";
 import Login from "./components/UserCatalog/Login/Login";
-import Interview from './components/InterviewsCatalog/Interviews';
+import Interview from './components/InterviewsCatalog/Interviews/Interviews';
+import AddInterview from './components/InterviewsCatalog/AddInterview';
 import InterviewByJobId from './components/InterviewsCatalog/InterviewsByJobId';
 import CandidateProfile from './components/CandidatesCatalog/CandidateProfile/CandidateProfile';
 import JobDetails from './components/JobsCatalog/DetailsJob/JobDetails';
@@ -36,6 +37,7 @@ function App() {
       <Route path='/jobs/:jobId' exact component={JobDetails} />
       <Route path='/jobs/edit/:jobId' component={EditJob}/>
       <Route path='/jobs/:jobId/interviews' exact component={InterviewByJobId} />
+      <Route path='/jobs/:jobId/addInterview' exact component={AddInterview}/>
       <Route path='/candidates' exact component={Candidates} />
       <Route path='/candidates/create' component={AddCandidate}/>
       <Route path='/candidates/:candidateId' component={CandidateProfile} />

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useHistory} from "react-router-dom";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import * as jobService from '../../../services/JobService';
+
 import './JobDetails.css';
 
 export default function JobDetails() {
@@ -10,12 +11,14 @@ export default function JobDetails() {
     const {user} = useAuthContext();
     const [job, setJob] = useState({});
 
+
     useEffect(() => {
         jobService.getOne(jobId)
             .then(result => {
                 setJob(result)
             })
     }, [jobId])
+
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -31,8 +34,8 @@ export default function JobDetails() {
             <Link className="jobDetailsButton" to={`/jobs/edit/${job._id}`}>Edit</Link>
             <Link className="jobDetailsButton" to='#' onClick={deleteHandler}>Delete</Link>
                 
-            <Link className="jobDetailsButton" to={`/jobs/${job._id}/interviews`}>Interviews</Link>
-            <Link className="jobDetailsButton" to="#">Candidates</Link>
+            <Link className="jobDetailsButton" to={`/jobs/${job._id}/interviews`}>All Interviews</Link>
+            <Link className="jobDetailsButton" to={`/jobs/${job._id}/addInterview`}>Add New Candidate</Link>
         </div>
     )
 

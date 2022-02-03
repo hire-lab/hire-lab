@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import * as interviewService from '../../services/InterviewService'
+import * as interviewService from '../../../services/InterviewService';
+import './Interviews.css'
 
 export default function Interview(){
     const [interviews, setInterviews] = useState([]);
@@ -12,7 +13,12 @@ export default function Interview(){
     }, [])
 
     return (
-        <h1>Hello</h1>
+        <section className="interviewsList">
+            <h3>Upcoming Interviews:</h3>
+        <ul>
+            {interviews.map(i => <li key={i.job}>{i.jobTitle} - {i.candidateName}</li>)}
+        </ul>
+        </section>
     )
 }
 

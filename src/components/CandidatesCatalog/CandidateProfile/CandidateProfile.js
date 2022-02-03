@@ -1,19 +1,14 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { isAuth } from "../../../hoc/isAuth";
-import * as jobService from '../../../services/JobService';
 import * as candidateService from '../../../services/CandidateService';
-import * as interviewService from '../../../services/InterviewService';
+
 import './CandidateProfile.css'
 
 const CandidateProfile = ({
     match
 }) =>  {
     const [candidate, setCandidate] = useState({});
-    const [jobs, setJobs] = useState([]);
-    let [jobId, setSelectedJob] = useState([])
-    const history = useHistory()
     const candidateId = match.params.candidateId;
 
     useEffect(() => {
@@ -23,52 +18,13 @@ const CandidateProfile = ({
         })
     }, [candidateId])
 
-    useEffect(() => {
-        jobService.getAll()
-            .then(result => {
-                setJobs(result)
-            })
-    }, [])
-
-    const onSelectJob = (e) => {
-        jobId = e.target.value;
-        setSelectedJob(jobId)
-    }
-
-    const onBookBtnClick = (e) => {
-        const interviewData = {
-            jobId,
-            candidateId
-        }
-
-        interviewService.bookInterview(interviewData)
-            .then(result => {
-                history.push('/interviews')
-            })
- 
-    }
-
     return (
         <section className="candidateProfile">
             <div className="candidate-profile-information">
                 <h3>Name: {candidate.name}</h3>
                 <p className="candidateProfileEmail">Email: {candidate.email}</p>
-                <p className="field">
-                    <label htmlFor="availableJobs">Available Jobs</label>
-                    <span className="input">
-                        <select id="availableJobs" name="availableJobs" onChange={onSelectJob} >
-                            <option disabled>Please select:</option>
-
-                            {jobs.map(j => 
-                                <option key={j._id} value={j._id}>{j.title}</option>
-                            )}
-    
-                        </select>
-                    </span>
-                </p>
-                <div className="candidateActions">
-                    <button onClick={onBookBtnClick} className="bookButton">Book an interview</button>                    
-                </div>
+                <Link className="bookButton" to={`/candidates/${candidate._id}/interviews`}>Upcoming Interview</Link>
+                <Link className="jobDetailsButton" to={`/jobs`}>Available Jobs</Link>
             </div>
         </section>
     )
