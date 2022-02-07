@@ -1,3 +1,4 @@
+import * as request from './requester';
 //const baseUrl = 'https://hire-lab-rest-api.herokuapp.com';
 const baseUrl = 'http://localhost:5555';
 
@@ -23,3 +24,5 @@ export async function create(data){
     let response = result.json();
     return response;
 }
+
+export const update = (candidateId, candidateData) => request.put(`${baseUrl}/candidates/${candidateId}`, candidateData)

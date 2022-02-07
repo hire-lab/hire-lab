@@ -19,6 +19,11 @@
     border-radius: 10px;
 }
 
+.editJob {
+    margin-left: 0
+}
+
+
 .actions{
     margin: 50px;
 }

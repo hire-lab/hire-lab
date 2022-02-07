@@ -23,7 +23,8 @@ const CandidateProfile = ({
             <div className="candidate-profile-information">
                 <h3>Name: {candidate.name}</h3>
                 <p className="candidateProfileEmail">Email: {candidate.email}</p>
-                <Link className="bookButton" to={`/candidates/${candidate._id}/interviews`}>Upcoming Interview</Link>
+                <Link className="jobDetailsButton editJob" to={`/candidates/edit/${candidateId}`}>Edit</Link>
+                <Link className="bookButton" to={`/candidates/${candidateId}/interviews`}>Upcoming Interview</Link>
                 <Link className="jobDetailsButton" to={`/jobs`}>Available Jobs</Link>
             </div>
         </section>

@@ -43,7 +43,7 @@ const AddCandidate = () => {
                 </div>
             </div>
         </form>
-</section>
+        </section>
     )
 }
 
