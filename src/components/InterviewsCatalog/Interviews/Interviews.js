@@ -16,7 +16,7 @@ export default function Interview(){
         <section className="interviewsList">
             <h3>Upcoming Interviews:</h3>
         <ul>
-            {interviews.map(i => <li key={i.job}>{i.jobTitle} - {i.candidateName}</li>)}
+            {interviews.map(i => <li key={i.potentialCandidates}>{i.candidateName} - {i.jobTitle}</li>)}
         </ul>
         </section>
     )
