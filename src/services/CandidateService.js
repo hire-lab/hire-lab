@@ -25,4 +25,13 @@ export async function create(data){
     return response;
 }
 
-export const update = (candidateId, candidateData) => request.put(`${baseUrl}/candidates/${candidateId}`, candidateData)
+export const update = (candidateId, candidateData) => request.put(`${baseUrl}/candidates/${candidateId}`, candidateData);
+
+export const del = (candidateId, token) => {
+    return fetch(`${baseUrl}/candidates/${candidateId}`, {
+        method: 'DELETE',
+        headers: {
+            'X-Authorization': token
+        }
+    })
+}
