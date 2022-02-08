@@ -37,7 +37,6 @@ const CandidateProfile = ({
                 <p className="candidateProfileEmail">Email: {candidate.email}</p>
                 <Link className="bookButton editJob" to={`/candidates/edit/${candidateId}`}>Edit</Link>
                 <Link className="bookButton editJob" to='#' onClick={deleteHandler}>Delete</Link>
-                <Link className="bookButton editJob" to={`/candidates/${candidateId}/interviews`}>Upcoming Interview</Link>
                 <Link className="bookButton editJob" to={`/jobs`}>Available Jobs</Link>
             </div>
         </section>

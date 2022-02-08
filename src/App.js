@@ -26,7 +26,6 @@ import Interview from './components/InterviewsCatalog/Interviews/Interviews';
 import AddInterview from './components/InterviewsCatalog/AddInterview';
 import InterviewByJobId from './components/InterviewsCatalog/InterviewsByJobId';
 
-
 function App() {
     
   return (

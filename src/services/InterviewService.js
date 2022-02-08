@@ -11,6 +11,11 @@ export async function getByJobId(jobId) {
     return result.json()
 }
 
+/*export async function getByCandidateId(candidateId){
+    let result = await fetch(`${baseUrl}/candidates/${candidateId}/interviews`)
+    return result.json()
+}*/
+
 export async function bookInterview(interviewData) {
     let response = await fetch(`${baseUrl}/interviews`, {
         method: 'POST',
