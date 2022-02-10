@@ -2,10 +2,10 @@
 Application to be used by Human Resources Department for managing company's job listings, upcoming interviews and potential candidates.
 
 ## Functionality
-* User Registration (only for members of the HR Team);
+* User Registration (only for members of the HR Team; added validation for company email account);
 * Option for viewing job listings (guests);
 * Option for creating a job listing (logged-in users);
-* Option for editing and deleting a job listings (author);
+* Option for editing and deleting a job listings (logged-in users);
 * Option for booking an interview for logged-in users;
 * Keeping a list of potential candidates for each job listing;
 * Keeping a list of candidates, who do not have a booked interview;
@@ -24,7 +24,7 @@ Application to be used by Human Resources Department for managing company's job 
 * **Jobs Browser** - list with all job listings
 * **Job Details** - title, additional description, dropdown list of potential candidates for this job
 * **Candidates Browser** - list with all candidates
-* **Candidate Profile** - name, position, option to book an interview; each candidate can have only one booked interview at a time
+* **Candidate Profile** - name, position; each candidate can have only one booked interview at a time
 * **Interviews Browser** - list with all interviews
 * **Interview Details** - [Approve] and [Reject] buttons for candidates whose interview has passed;
 
@@ -47,7 +47,6 @@ Application to be used by Human Resources Department for managing company's job 
 {
     name: String,
     email: String, 
-    interview: Pointer<Interviews>
 }
 ```
 
@@ -55,21 +54,20 @@ Application to be used by Human Resources Department for managing company's job 
 ```javascript
 {
     title: String,
-    description: String, 
-    requirements: String,
-    potentialCandidates: Pointer<Candidates>
+    description: String,
 }
 ```
 
 * Interviews
 ```javascript
-{
-    time: String,
-    candidates:  Pointer<Candidates> 
+{   job: Pointer<Jobs>,
+    potentialCandidates:  Pointer<Candidates> 
+    jobTitle: type: String,
+    candidateName: type: String
 }
 ```
 
 #### Access Control
-* Guests can register, view the job listings
-*  Registered users can log in, as well as view the job listings, the list of potential candidates, and the list of interviews
-* Only the creator of a job listing can edit and delete it
+* Guests can register, view the job listings.
+* Registered users can log in, as well as view the job listings, the list of potential candidates, and the list of interviews.
+* Only looged-in users can add, edit and delete a job listing, add, edit and delete candidates, add interviews.
