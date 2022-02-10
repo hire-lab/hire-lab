@@ -1,9 +1,6 @@
 {
   "name": "hire-lab",
-  "homepage": "http://zlatina-moga.github.io/hire-lab",
-  "devDependencies": {
-    "gh-pages": "^3.2.3"
-  },
+  "homepage": "http://hire-lab.github.io/hire-lab",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
