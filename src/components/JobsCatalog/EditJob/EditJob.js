@@ -2,7 +2,7 @@ import { useParams, useHistory } from "react-router-dom";
 import useJobState from "../../../hooks/useJobState";
 import * as jobService from '../../../services/JobService';
 
-export default function Edit() {
+export default function EditJob() {
     const history = useHistory();
     const {jobId} = useParams()
     const [job, setJob] = useJobState(jobId);
@@ -21,24 +21,20 @@ export default function Edit() {
 
     return (
         <section className="createJobPage">
-        <article>
-            <h1>Edit job listing</h1>
-        </article>
-        <form method="POST" onSubmit={onEditSubmitHandler}>               
-            <div className="row space-top">
-                <div className="col-md-4">
-                    <div className="form-group">
-                        <label className="form-control-label" htmlFor="title">Title</label>
-                        <input className="form-control" type="text" name="title" id="title" defaultValue={job.title} />
-                    </div>
-                    <div className="form-group">
-                        <label className="form-control-label" htmlFor="description">Description</label>
-                        <input className="form-control" id="description" type="text" name="description" defaultValue={job.description} />
-                    </div>
-                    <input className="btn btn-primary" type="submit" value="Save Job Listing" />
+            <article className="loginPageTitle">
+                <h1>Edit job listing</h1>
+            </article>
+            <form className="loginForm" method="POST" onSubmit={onEditSubmitHandler}>               
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="title">Title</label>
+                    <input className="loginFormFieldInput" type="text" name="title" id="title" defaultValue={job.title} />
                 </div>
-            </div>
-        </form>
-    </section>
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="description">Description</label>
+                    <input className="loginFormFieldInput" id="description" type="text" name="description" defaultValue={job.description} />
+                </div>
+                <input className="loginBtn addJobBtn" type="submit" value="Save Job Listing" />
+            </form>
+        </section>
     )
 }

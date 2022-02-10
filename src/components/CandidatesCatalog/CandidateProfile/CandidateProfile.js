@@ -31,13 +31,19 @@ const CandidateProfile = ({
     }
 
     return (
-        <section className="candidateProfile">
-            <div className="candidate-profile-information">
-                <h3>Name: {candidate.name}</h3>
-                <p className="candidateProfileEmail">Email: {candidate.email}</p>
-                <Link className="bookButton editJob" to={`/candidates/edit/${candidateId}`}>Edit</Link>
-                <Link className="bookButton editJob" to='#' onClick={deleteHandler}>Delete</Link>
-                <Link className="bookButton editJob" to={`/jobs`}>Available Jobs</Link>
+        <section className="jobDetails">
+            <div className="jobDetailsInformation">
+                <h3>Name:</h3>
+                <h1>{candidate.name}</h1>
+                <div className="jobDescription">
+                    <h3>Email:</h3>
+                    <p>{candidate.email}</p>
+                </div>
+                <div className="actions">
+                    <Link className="jobDetailsButton editJob" to={`/candidates/edit/${candidateId}`}>Edit</Link>
+                    <Link className="jobDetailsButton editJob" to='#' onClick={deleteHandler}>Delete</Link>
+                    <Link className="jobDetailsButton editJob" to={`/jobs`}>Available Jobs</Link>
+                </div>
             </div>
         </section>
     )

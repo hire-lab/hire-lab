@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as interviewService from '../../../services/InterviewService';
 import './Interviews.css'
 
-export default function Interview(){
+export default function Interviews(){
     const [interviews, setInterviews] = useState([]);
 
     useEffect(() => {
@@ -14,10 +14,12 @@ export default function Interview(){
 
     return (
         <section className="interviewsList">
-            <h3>Upcoming Interviews:</h3>
-        <ul>
-            {interviews.map(i => <li key={i.potentialCandidates}>{i.candidateName} - {i.jobTitle}</li>)}
-        </ul>
+             <article className="loginPageTitle">
+                <h1>Upcoming Interviews:</h1>
+            </article>
+            <ul>
+                {interviews.map(i => <li key={i.potentialCandidates}>{i.candidateName} - {i.jobTitle}</li>)}
+            </ul>
         </section>
     )
 }

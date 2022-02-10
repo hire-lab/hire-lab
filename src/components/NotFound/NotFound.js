@@ -9,6 +9,7 @@ export default function Error() {
             <h1 className="errorTitleText zero">0</h1>
             <h1 className="errorTitleText">4</h1>
         </article>
+        <span className="aboutPageTitleUnderline"></span>
         <h3 className="errorPageText">The page you are looking for cannot be found.</h3>
         <button className="errorPageLink">
             <Link className="errorPageLinkText" to="/">Back to home</Link>

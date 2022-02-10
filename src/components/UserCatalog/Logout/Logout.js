@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import {AuthContext} from '../../../contexts/AuthContext';
 import * as userService from '../../../services/UserService';
 

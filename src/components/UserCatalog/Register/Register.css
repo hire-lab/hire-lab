@@ -1,6 +1,6 @@
 .registerPage{
-    margin: 40px auto;
-    padding: 70px 80px;
+    padding: 0px 80px 100px 80px;
+    color: #4E4E4E;
 }
 
 .registerPageTitle{
@@ -9,4 +9,18 @@
 
 .field{
     margin-top: 15px;
+}
+
+.registerBtn{
+    width: 108px;
+    padding: 6px 12px;
+    border-radius: 18px;
+}
+
+.loginBtn:hover{
+   color: #337AB7;
+   background: white;
+   border: 1px dotted #337AB7;
+   cursor: pointer;
+   font-weight: 700;
 }

@@ -24,23 +24,19 @@ export default function CreateJobListing() {
     }
     return (
         <section className="createJobPage">
-            <article>
+            <article className="loginPageTitle">
                 <h1>Add new job listing</h1>
             </article>
-            <form method="POST" onSubmit={createJobHandler}>               
-                <div className="row space-top">
-                    <div className="col-md-4">
-                        <div className="form-group">
-                            <label className="form-control-label" htmlFor="title">Title</label>
-                            <input className="form-control" type="text" name="title" id="title" placeholder="Title" />
-                        </div>
-                        <div className="form-group">
-                            <label className="form-control-label" htmlFor="description">Description</label>
-                            <input className="form-control" id="description" type="text" name="description" placeholder="Description" />
-                        </div>
-                        <input className="btn btn-primary" type="submit" value="Add Job Listing" />
-                    </div>
+            <form className="loginForm" method="POST" onSubmit={createJobHandler}>               
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="title">Title</label>
+                    <input className="loginFormFieldInput" type="text" name="title" id="title" placeholder="Title" />
                 </div>
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="description">Description</label>
+                    <input className="loginFormFieldInput" id="description" type="text" name="description" placeholder="Description" />
+                </div>
+                <input className="loginBtn addJobBtn" type="submit" value="Add Job Listing" />
             </form>
         </section>
     )

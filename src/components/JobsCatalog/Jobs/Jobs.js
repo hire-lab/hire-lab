@@ -25,29 +25,24 @@ export default function Jobs() {
     )
 
     return (
-        <section id="services" className="section-padding">
-        <div className="container">
-            <div className="row">
-                <div className="col-sm-8 col-sm-offset-2 text-center">
-                    <div className="section-title">
-                        <h1><span className="colored-text"> Job</span> Listings</h1> 
-                        <span className="border-line"></span>
+        <section className="jobsPage">
+            <div className="jobsPageTitle">
+                <h1><span className="coloredText"> Job</span> Listings</h1> 
+                <span className="aboutPageTitleUnderline"></span>
 
-                        {user.email
-                            ? addJobButton
-                            : null
-                        }
-                        
-                    </div>
-                </div>
-            </div>
+                    {user.email
+                        ? addJobButton
+                        : null
+                    }
+            </div>         
             <div className="jobListings">
-            {jobs.length > 0
-                ? jobs.map(j => <JobListing key={j._id} job={j} />)
-                : <h3>No job listings yet</h3>
-            }
-        </div>
-        </div>
-    </section>
+
+                {jobs.length > 0
+                    ? jobs.map(j => <JobListing key={j._id} job={j} />)
+                    : <h3>No job listings yet</h3>
+                }
+
+            </div>
+        </section>
     )
 }

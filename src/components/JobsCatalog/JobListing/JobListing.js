@@ -1,20 +1,19 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import './JobListing.css'
 
 export default function JobListing({
     job
 }) {
 
     return (
-        <div>
-          <div className="feature-icon-wrap services-icons clearfix">
-            <div className="left-side-icon">
-                <i className="ion-ios-people-outline front-icon"></i>
+        <div className="jobListingCard">
+            <div className="cardIcon">
+                <i className="fas fa-users front-icon jobsIcon"></i>
             </div>
-            <div className="features-text-right">
+            <div className="jobListingInfo">
                 <Link to={`/jobs/${job._id}`}><h3>{job.title}</h3> </Link>                       
                 <p>{job.description}</p>
             </div>
-        </div>
         </div>
     )
 }
