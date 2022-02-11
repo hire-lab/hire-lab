@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import './LandingPage.css'
 
-export default function LandingPage2() {
+export default function LandingPage() {
     return (
         <article className="homePage">
             <img className="homePageImg" src="/images/bg-3.jpg" alt="home" />
