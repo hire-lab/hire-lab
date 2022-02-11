@@ -1,0 +1,8 @@
+.candidateListingInfo{
+    margin-left: 10px;
+}
+
+
+.candidateDetailsLink:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,41 @@
+.navSectionContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 80px;
+}
+
+.navSectionNavbar{
+    display: flex;
+    
+}
+
+.homeNavWrapper{
+    list-style: none;
+    margin: 0 10px;
+}
+
+.homeNav,
+.navSectionTitle{
+    text-decoration: none;
+    line-height: 20px;
+    
+}
+
+.navSectionTitle{
+    font-size: 35px;
+    text-transform: uppercase;
+    color: black
+}
+
+.homeNav {
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #03a9f4;
+}
+
+.homeNav:hover{
+    color: black;
+}

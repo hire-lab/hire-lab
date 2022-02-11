@@ -1,0 +1,88 @@
+.aboutPage{
+    display: flex;
+    flex-direction: column;
+    color: #4E4E4E;
+    margin: 0 auto;
+    padding: 60px 80px 40px 40px;
+}
+
+.aboutPageTitleSection{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aboutPageTitle {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 44px;
+    margin: 0;
+}
+
+.aboutPageTitleUnderline{
+    width: 80px;
+    height: 1px;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    background-color: #03a9f4;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutPageTitleInfo{
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    color: #444444;
+}
+
+.aboutPageText{
+    display: flex;
+}
+
+.aboutPageTextCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 40px;
+    margin: 0;
+    max-width: 50%;
+}
+
+.cardIcon{
+    float: left;
+}
+
+.front-icon{
+    color: #03a9f4;
+    font-size: 42px;
+}
+
+.back-icon{
+    z-index: -1;
+    color: #F0F0F0;
+    position: absolute;
+    padding-left: 80px;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 100px;
+}
+
+.aboutPageTextCard,
+.aboutPageTextCardContent {
+    padding-left: 40px;
+    overflow: hidden;
+}
+
+.aboutPageTextCardContent{
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 24px;
+}

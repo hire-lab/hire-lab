@@ -1,0 +1,22 @@
+.createJobPage{
+    margin: 40px auto;
+    padding: 0px 80px 100px 80px;
+    color: #4E4E4E;
+}
+
+.loginPageTitle h1{
+    text-transform: capitalize;
+}
+
+.addJobBtn{
+    font-family: 'Open Sans', sans-serif;
+    width: 167px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.loginFormFieldInput:focus{
+    border: 1px solid #03a9f4;
+    box-shadow: 1px 1px 7px -1px #03a9f4;
+    outline: none
+}
