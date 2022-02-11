@@ -4,7 +4,6 @@ import './LandingPage.css'
 export default function LandingPage() {
     return (
         <article className="homePage">
-            <img className="homePageImg" src="/images/bg-3.jpg" alt="home" />
            
             <section className="homePageSection">
                 <h1 className="homePageSectionTitle">welcome to Hire Lab</h1>
