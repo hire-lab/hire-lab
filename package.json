@@ -1,7 +1,7 @@
 {
   "name": "hire-lab",
   "version": "0.1.0",
-  "homepage": "https:///hire-lab.github.io/hire-lab/",
+  "homepage": "https://hire-lab.github.io/hire-lab/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
