@@ -41,7 +41,7 @@ export default function Login() {
                     </div>
                     <input type="submit" className="loginBtn" value="Login" />
                     <p className="field">
-                        <span>New to the team? Click <Link className="linkBtn" to="/register">here</Link></span>
+                        <span>Don't have an account? Click <Link className="linkBtn" to="/register">here</Link></span>
                     </p>
             </form>
         </section>

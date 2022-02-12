@@ -51,7 +51,7 @@ export default function JobDetails() {
 
             {user.email
                 ? authButtons
-                : null
+                : <Link className="loginBtn guestBtn" to="/login">Login to Apply</Link>
             }
 
 

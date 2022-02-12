@@ -53,7 +53,7 @@ export default function Register() {
             </form>
 
             <p className="field">
-                <span>Already part of the team? Click <Link className="linkBtn" to="/login">here</Link></span>
+                <span>Already have an account? Click <Link className="linkBtn" to="/login">here</Link></span>
             </p>
         </section>
     )

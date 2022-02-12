@@ -20,6 +20,16 @@
     font-weight: 500;
 }
 
+.footerInfoWrapper{
+    text-align: center;
+    font-size: 14px;
+    color: #C1E5FC;
+}
+
+.footerInfoWrapper p{
+    margin: 10px;
+}
+
 .footerLinks{
    display: flex;
    align-items: center;

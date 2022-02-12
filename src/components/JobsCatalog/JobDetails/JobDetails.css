@@ -56,3 +56,9 @@
 .actions{
     margin: 50px;
 }
+
+.guestBtn{
+    background: #03a9f4;
+    width: 160px;
+    text-decoration: none;
+}
