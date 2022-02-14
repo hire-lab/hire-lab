@@ -20,8 +20,38 @@ export default function Navigation () {
         <ul className='navSectionNavbar'>
             <li className='homeNavWrapper'><Link className='homeNav' to="/about">About</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/jobs">Jobs</Link></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to="/login">Login</Link></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to="/register">Register</Link></li>                  
+            <span className='dropdown'>
+                <button className='dropBtn homeNav'>
+                    Login
+                    <i className="fa fa-angle-down"></i>
+                </button>
+                <section className='dropdownContent'>
+                    <li className='homeNavWrapper'>
+                        <i className="far fa-user"></i>
+                        <Link className='homeNav' to="/login"> User</Link>
+                    </li>
+                    <li className='homeNavWrapper'>
+                        <i className="far fa-building"></i>
+                        <Link className='homeNav' to="/company/login"> Company</Link>
+                    </li>
+                </section>
+            </span>
+            <span className='dropdown'>
+                <button className='dropBtn homeNav'>
+                    Register
+                    <i className="fa fa-angle-down"></i>
+                </button>
+                <section className='dropdownContent'>
+                    <li className='homeNavWrapper'>
+                        <i className="far fa-user"></i>
+                        <Link className='homeNav' to="/register"> User</Link>
+                    </li>
+                    <li className='homeNavWrapper'>
+                        <i className="far fa-building"></i>
+                        <Link className='homeNav' to="/company/register"> Company</Link>
+                    </li>
+                </section>
+            </span>                
         </ul>
     )
     return (
