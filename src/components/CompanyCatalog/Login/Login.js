@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import * as CompanyService from '../../../services/CompanyService';
-import  {AuthContext} from '../../../contexts/AuthContext';
+import  {AuthCompanyContext} from '../../../contexts/AuthCompanyContext';
 
 export default function CompanyLogin() {
-    const {login} = useContext(AuthContext);
+    const {login} = useContext(AuthCompanyContext);
     const history = useHistory();
 
     const onLoginHandler = (e) => {

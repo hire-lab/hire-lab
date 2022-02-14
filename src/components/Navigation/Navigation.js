@@ -1,18 +1,30 @@
 import { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../../contexts/AuthContext';
+import { AuthCompanyContext } from '../../contexts/AuthCompanyContext';
 import './Navigation.css'
 
 export default function Navigation () {
     const {user} = useContext(AuthContext);
+    const {company} = useContext(AuthCompanyContext);
+    let navigation = null;
 
     let userNavigation = (
         <ul className='navSectionNavbar'>
             <li className='homeNavWrapper'><span className='homeNav'>Welcome, {user.name}</span></li>
+            <li className='homeNavWrapper'><Link className='homeNav' to="/about">About</Link></li>
+            <li className='homeNavWrapper'><Link className='homeNav' to="/jobs">Jobs</Link></li>
+            <li className='homeNavWrapper'><Link className='homeNav' to="/logout">Logout</Link></li>                      
+        </ul>
+    );
+
+    let companyNavigation = (
+        <ul className='navSectionNavbar'>
+            <li className='homeNavWrapper'><span className='homeNav'>Welcome, {company.name}</span></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/jobs">Jobs</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/candidates">Candidates</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/interviews">Interviews</Link></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to="/logout">Logout</Link></li>                      
+            <li className='homeNavWrapper'><Link className='homeNav' to="/company/logout">Logout</Link></li>                      
         </ul>
     );
 
@@ -54,6 +66,15 @@ export default function Navigation () {
             </span>                
         </ul>
     )
+
+    if (company.email != ''){ 
+        navigation = companyNavigation
+    } else if (user.email != ''){
+        navigation = userNavigation
+    } else {
+        navigation = guestNavigation
+    }
+
     return (
         <nav className='navbar'>
           <section className="navSectionContainer">
@@ -61,10 +82,7 @@ export default function Navigation () {
                 <Link className="navSectionTitle" to="/">Hire Lab</Link>
             </article>
             <article id="navSectionNavbarWrapper">
-            {user.email
-                    ? userNavigation
-                    : guestNavigation
-            }
+                {navigation}
             </article>
         </section>
     </nav>
