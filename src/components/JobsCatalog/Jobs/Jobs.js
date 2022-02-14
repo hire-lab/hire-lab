@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {useAuthContext} from '../../../contexts/AuthContext';
+import {useCompanyAuthContext} from '../../../contexts/AuthCompanyContext';
 import JobListing from '../JobListing/JobListing'
 import * as JobService from '../../../services/JobService';
 import './Jobs.css'
 
 export default function Jobs() {
     const [jobs, setJobs] = useState([]);
-    const {user} = useAuthContext();
+    const {company} = useCompanyAuthContext();
 
     useEffect(() => {
         JobService.getAll()
@@ -30,7 +30,7 @@ export default function Jobs() {
                 <h1><span className="coloredText"> Job</span> Listings</h1> 
                 <span className="aboutPageTitleUnderline"></span>
 
-                    {user.email
+                    {company.email
                         ? addJobButton
                         : null
                     }

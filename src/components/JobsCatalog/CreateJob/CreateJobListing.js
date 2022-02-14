@@ -1,23 +1,30 @@
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
+import { isAuth } from '../../../hoc/isAuth';
 import * as JobService from '../../../services/JobService';
-import {useAuthContext} from '../../../contexts/AuthContext'
+import {useCompanyAuthContext} from '../../../contexts/AuthCompanyContext'
 import './CreateJobListing.css'
 
-export default function CreateJobListing() {
+const CreateJobListing = () => {
     const history = useHistory();
-    const {user} = useAuthContext();
+    const {company} = useCompanyAuthContext();
 
     const createJobHandler = (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         let title = formData.get('title');
+        let companyName = formData.get('companyName');
         let description = formData.get('description');
+        let location = formData.get('location');
+        let companyId = company._id;
 
         JobService.create({
             title,
-            description
-        }, user.accessToken)
+            companyName,
+            description,
+            location,
+            companyId
+        }, company.accessToken)
             .then(result => {
                 history.push('/jobs')
         })
@@ -33,11 +40,21 @@ export default function CreateJobListing() {
                     <input className="loginFormFieldInput" type="text" name="title" id="title" placeholder="Title" />
                 </div>
                 <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="companyName">Company</label>
+                    <input className="loginFormFieldInput" type="text" name="companyName" id="companyName" placeholder="Company" />
+                </div>
+                <div className="loginFormField">
                     <label className="loginFormFieldLabel" htmlFor="description">Description</label>
                     <input className="loginFormFieldInput" id="description" type="text" name="description" placeholder="Description" />
+                </div>
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="location">Location</label>
+                    <input className="loginFormFieldInput" id="location" type="text" name="location" placeholder="Location" />
                 </div>
                 <input className="loginBtn addJobBtn" type="submit" value="Add Job Listing" />
             </form>
         </section>
     )
 }
+
+export default isAuth(CreateJobListing)

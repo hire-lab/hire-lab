@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthCompanyContext } from "../contexts/AuthCompanyContext";
 
 
 export const isAuth = (Component) => {
     const WrapperComponent = (props) => {
-        const {user} = useContext(AuthContext);
+        const {company} = useContext(AuthCompanyContext);
         const history = useHistory();
 
-        if (!user.email) {
+        if (!company.email) {
             history.push('/login');
             return null;
         }
