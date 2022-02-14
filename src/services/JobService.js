@@ -9,6 +9,11 @@ export async function getOne(id){
     return result.json()
 }
 
+export async function getByCompanyId(id){
+    let result = await fetch(`${baseUrl}/jobs/${id}/jobs`);
+    return result.json()
+}
+
 export async function create(jobData) {
     let response = await fetch(`${baseUrl}/jobs`, {
         method: 'POST',

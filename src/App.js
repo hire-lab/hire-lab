@@ -21,6 +21,7 @@ import Jobs from './components/JobsCatalog/Jobs/Jobs';
 import CreateJobListing from './components/JobsCatalog/CreateJob/CreateJobListing';
 import JobDetails from './components/JobsCatalog/JobDetails/JobDetails';
 import EditJob from './components/JobsCatalog/EditJob/EditJob';
+import JobsByCompanyId from './components/JobsCatalog/JobsByCompanyId/JobsByCompanyId';
 
 import Candidates from './components/CandidatesCatalog/Candidates/Candidates';
 import AddCandidate from './components/CandidatesCatalog/AddCandidate/AddCandidate';
@@ -54,6 +55,7 @@ function App() {
         <Route path='/jobs' exact component={Jobs} />
         <Route path='/jobs/create' component={CreateJobListing}/>
         <Route path='/jobs/:jobId' exact component={JobDetails}/>
+        <Route path='/jobs/:companyId/jobs' exact component={JobsByCompanyId}/>
         <Route path='/jobs/edit/:jobId' exact component={EditJob}/>
         <Route path='/jobs/:jobId/interviews' exact component={InterviewsaByJobId} />
         <Route path='/jobs/:jobId/addInterview' exact component={AddInterview} />
