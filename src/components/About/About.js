@@ -48,9 +48,6 @@ export default function About() {
                 </div>
             </section>
         </article>
-        <article className="aboutPageCTA">
-            <a href='mailto:email@email.com' className="loginBtn guestBtn">Get in touch</a>
-        </article>
        
     </section>
 )

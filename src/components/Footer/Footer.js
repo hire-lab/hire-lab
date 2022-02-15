@@ -5,7 +5,6 @@ export default function Footer () {
         <footer className="footer">
         <h5 className="footerTitle">Hire Lab</h5>
         <span className="footerInfoWrapper">  
-            <p>City Name, Street st., nr. N</p>
             <p>email@email.com</p>
             <p>+000000000000</p>
         </span>

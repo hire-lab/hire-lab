@@ -44,11 +44,9 @@ export default function JobDetails() {
             jobId
         }
 
-        console.log(candidate)
-
         candidateService.create(candidate).then(() =>{
-                    history.push('/jobs')
-                })
+            history.push('/jobs')
+        })
     }
 
     const companyButtons = (
