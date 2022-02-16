@@ -2,8 +2,8 @@ import * as request from './requester';
 //const baseUrl = 'https://hire-lab-rest-api.herokuapp.com';
 const baseUrl = 'http://localhost:5555';
 
-export async function getAll() {
-    let result =  await fetch(`${baseUrl}/candidates`);
+export async function getAll(companyId) {
+    let result =  await fetch(`${baseUrl}/candidates/${companyId}/candidates`);
     return result.json()
 }
 

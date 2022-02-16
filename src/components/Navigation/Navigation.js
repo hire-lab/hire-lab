@@ -22,7 +22,7 @@ export default function Navigation () {
         <ul className='navSectionNavbar'>
             <li className='homeNavWrapper'><span className='homeNav'>Welcome, {company.name}</span></li>
             <li className='homeNavWrapper'><Link className='homeNav' to={`/jobs/${company._id}/jobs`}>Jobs</Link></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to="/candidates">Candidates</Link></li>
+            <li className='homeNavWrapper'><Link className='homeNav' to={`/candidates/${company._id}/candidates`}>Candidates</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/interviews">Interviews</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/company/logout">Logout</Link></li>                      
         </ul>

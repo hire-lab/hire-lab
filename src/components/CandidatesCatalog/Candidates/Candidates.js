@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { isAuth } from "../../../hoc/isAuth";
 import CandidateListing from '../CandidateListing/CandidateListing'
 import * as CandidateService from '../../../services/CandidateService';
@@ -7,9 +7,10 @@ import './Candidates.css'
 
 const Candidates = () => {
     const [candidates, setCandidates] = useState([]);
+    let {companyId} = useParams()
 
     useEffect(() => {
-        CandidateService.getAll()
+        CandidateService.getAll(companyId)
             .then(result => {
                 setCandidates(result)
             })

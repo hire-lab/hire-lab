@@ -37,7 +37,7 @@ export default function JobsByCompanyId(){
 
                 {jobs.length > 0
                     ? jobs.map(j => <JobListing key={j._id} job={j} />)
-                    : <h3>Loading...</h3>
+                    : <h3>There are no jobs at the moment.</h3>
                 }
 
             </div>
