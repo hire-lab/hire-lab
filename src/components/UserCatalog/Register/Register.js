@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
-import * as authService from '../../../services/UserService';
+import * as userService from '../../../services/UserService';
 import { AuthContext } from "../../../contexts/AuthContext";
 import './Register.css'
 
@@ -11,8 +11,8 @@ export default function Register() {
     const onRegisterHandler = (e) => {
         e.preventDefault();
 
-        let {email, name, password} = Object.fromEntries(new FormData(e.currentTarget));
-        authService.register(email, name, password)
+        let {email, name, cv, password} = Object.fromEntries(new FormData(e.currentTarget));
+        userService.register(email, name, cv, password)
             .then(authData => {
                 //error message = authData.message
 
@@ -40,6 +40,10 @@ export default function Register() {
                 <div className="loginFormField">
                     <label className="loginFormFieldLabel" htmlFor="name">Name</label>
                     <input className="loginFormFieldInput" id="name" type="text" name="name" placeholder="Maria Ivanova"/>
+                </div>
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="cv">CV URL</label>
+                    <input className="loginFormFieldInput" id="cv" type="text" name="cv" placeholder="https://maria-ivanova-cv.com"/>
                 </div>
                 <div className="loginFormField">
                     <label className="loginFormFieldLabel" htmlFor="password">Password</label>

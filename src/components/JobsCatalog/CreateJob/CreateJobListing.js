@@ -26,7 +26,7 @@ const CreateJobListing = () => {
             companyId
         }, company.accessToken)
             .then(result => {
-                history.push('/jobs')
+                history.push(`/jobs/${companyId}/jobs`)
         })
     }
     return (
