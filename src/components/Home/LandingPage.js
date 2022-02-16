@@ -7,7 +7,11 @@ export default function LandingPage() {
            
             <section className="homePageSection">
                 <h1 className="homePageSectionTitle">welcome to Hire Lab</h1>
-                <h4 className="homePageSectionSubtitle">Do you wish to attract and hire those key candidates that you will bring your company the best results?</h4>
+                <section className="homePageSectionSubtitle">
+                    <h4>Looking for a job?</h4>
+                    <h4>Looking for the perfect candidate?</h4>
+                    <h4>You are in the right place.</h4>
+                </section>
                 <Link className="homePageSectionBtn" to="/about">See more</Link>
             </section>
     </article>

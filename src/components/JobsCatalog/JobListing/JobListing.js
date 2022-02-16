@@ -11,8 +11,8 @@ export default function JobListing({
                 <i className="fas fa-users front-icon jobsIcon"></i>
             </div>
             <div className="jobListingInfo">
-                <Link to={`/jobs/${job._id}`}><h3>{job.title}</h3> </Link>                       
-                <p>{job.description}</p>
+                <Link to={`/jobs/${job._id}`}><h3>{job.title}</h3> </Link>                      
+                <p>{job.location}</p>
             </div>
         </div>
     )

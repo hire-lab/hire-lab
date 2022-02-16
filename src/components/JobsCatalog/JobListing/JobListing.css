@@ -13,6 +13,7 @@
     font-weight: 800;
     font-size: 18px;
     letter-spacing: 1px;
+    text-transform: uppercase;
     line-height: 20px;
     height: 20px;
     width: 1030px;
@@ -46,5 +47,5 @@
 }
 
 .jobListingInfo{
-    margin-left: 40px;
+    margin-left: 10px;
 }
