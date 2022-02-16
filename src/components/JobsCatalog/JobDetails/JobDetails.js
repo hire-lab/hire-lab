@@ -22,7 +22,6 @@ export default function JobDetails() {
             })
     }, [jobId])
 
-
     const deleteHandler = (e) => {
         e.preventDefault();
 
@@ -44,7 +43,8 @@ export default function JobDetails() {
             jobId
         }
 
-        candidateService.create(candidate).then(() =>{
+        candidateService.create(candidate).then(() => {
+            //add toast if already applied and upon success
             history.push('/jobs')
         })
     }
@@ -63,8 +63,10 @@ export default function JobDetails() {
 
     const userButton = (<Link className="loginBtn guestBtn" onClick={onApplyBtn} to="#">Apply</Link>)
 
-    if (company.email != ''){
+    if (job.companyId == company._id){
         actions = companyButtons
+    } else if (company.email != ''){
+        actions = ''
     } else if (user.email != ''){
         actions = userButton
     } else {
