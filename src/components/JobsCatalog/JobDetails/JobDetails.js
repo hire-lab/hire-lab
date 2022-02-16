@@ -14,6 +14,7 @@ export default function JobDetails() {
     const {user} = useAuthContext();
     const [job, setJob] = useState({});
     let actions = '';
+    let companyId = job.companyId;
 
     useEffect(() => {
         jobService.getOne(jobId)
@@ -32,15 +33,11 @@ export default function JobDetails() {
     }
 
     const onApplyBtn = (e) => {
-        e.preventDefault();
-
-        let name = user.name;
-        let email = user.email;
-
         let candidate = {
-            name,
-            email,
-            jobId
+            name: user.name,
+            email: user.email,
+            jobId,
+            companyId
         }
 
         candidateService.create(candidate).then(() => {
