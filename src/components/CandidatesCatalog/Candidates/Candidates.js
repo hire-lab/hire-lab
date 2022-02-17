@@ -33,7 +33,7 @@ const Candidates = () => {
                     : <h3>There are no candidates at the moment.</h3>
                 }
             </div>
-    </section>
+        </section>
     )
 }
 
