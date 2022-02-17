@@ -17,3 +17,24 @@
 #availableJobs{
     margin-left: 10px;
 }
+
+.cvLink{
+    text-decoration: none;
+    color: #505050;
+}
+
+.cvLink:hover{
+    text-decoration: underline;
+}
+
+.approveBtn{
+    background: #21C65E;
+}
+
+.rejectBtn{
+    background: #EF534B;
+}
+
+.reject{
+    margin-right: 5px;
+}

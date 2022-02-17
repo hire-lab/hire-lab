@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { isAuth } from "../../../hoc/isAuth";
 import { useAuthContext } from "../../../contexts/AuthContext";
+import { useCompanyAuthContext } from "../../../contexts/AuthCompanyContext";
 import * as candidateService from '../../../services/CandidateService';
 
 import './CandidateProfile.css'
@@ -13,6 +14,7 @@ const CandidateProfile = ({
     const candidateId = match.params.candidateId;
     const history = useHistory()
     const {user} = useAuthContext()
+    const {company} = useCompanyAuthContext()
 
     useEffect(() => {
         candidateService.getOne(candidateId)
@@ -38,11 +40,22 @@ const CandidateProfile = ({
                 <div className="jobDescription">
                     <h3>Email:</h3>
                     <p>{candidate.email}</p>
+                    <h3>CV:</h3>
+                    <a className="cvLink" href={`http://${candidate.cv}`} target="_blank">{candidate.cv}</a>
+
+                    {candidate.companyId == company._id
+                        ?  <>
+                                <h3>Applied for:</h3>
+                                <p>{candidate.jobs}</p>
+                            </>
+                        : null
+                    }
+                   
+                   
                 </div>
                 <div className="actions">
-                    <Link className="jobDetailsButton editJob" to={`/candidates/edit/${candidateId}`}>Edit</Link>
-                    <Link className="jobDetailsButton editJob" to='#' onClick={deleteHandler}>Delete</Link>
-                    <Link className="jobDetailsButton editJob" to={`/jobs`}>Available Jobs</Link>
+                    <Link className="jobDetailsButton editJob approveBtn" to={`#`}><i className="fas fa-check"></i> Approve</Link>
+                    <Link className="jobDetailsButton editJob rejectBtn" to='#' onClick={deleteHandler}><i className="fas fa-times"></i> Reject</Link>
                 </div>
             </div>
         </section>

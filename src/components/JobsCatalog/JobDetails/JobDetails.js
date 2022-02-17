@@ -36,6 +36,7 @@ export default function JobDetails() {
         let candidate = {
             name: user.name,
             email: user.email,
+            cv: user.cv,
             jobId,
             companyId
         }
