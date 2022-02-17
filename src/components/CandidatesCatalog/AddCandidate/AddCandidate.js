@@ -1,24 +1,30 @@
 import { useHistory } from 'react-router';
 import { isAuth } from "../../../hoc/isAuth";
+import { useCompanyAuthContext } from '../../../contexts/AuthCompanyContext';
 import * as CandidateService from '../../../services/CandidateService';
 import './AddCandidate.css'
 
 const AddCandidate = () => {
     const history = useHistory()
+    const {company} = useCompanyAuthContext()
     
     const addCandidateHandler = (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         let name = formData.get('name');
-        let email = formData.get('email')
+        let email = formData.get('email');
+        let cv = formData.get('cv');
+        let companyId = company._id;
 
         CandidateService.create({
             name,
-            email
+            email,
+            cv,
+            companyId
         }).then(result => {
             //result.message == error message!
-            history.push('/candidates')
+            history.push(`/candidates/${company._id}/candidates`)
         })
     }
 
@@ -36,6 +42,10 @@ const AddCandidate = () => {
                 <div className="loginFormField">
                     <label className="loginFormFieldLabel" htmlFor="email">Email</label>
                     <input className="loginFormFieldInput" id="email" type="email" name="email" placeholder="Email" />
+                </div>
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="cv">CV URL</label>
+                    <input className="loginFormFieldInput" id="cv" type="text" name="cv" placeholder="https://maria-ivanova-cv.com"/>
                 </div>
                 <input className="loginBtn addJobBtn" type="submit" value="Add Candidate" />
             </form>

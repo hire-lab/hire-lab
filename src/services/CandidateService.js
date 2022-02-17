@@ -7,8 +7,8 @@ export async function getAll(companyId) {
     return result.json()
 }
 
-export async function getOne(id) {
-    let result = await fetch(`${baseUrl}/candidates/${id}`);
+export async function getOne(companyId, id) {
+    let result = await fetch(`${baseUrl}/candidates/${companyId}/candidates/${id}`);
     return result.json()
 }
 

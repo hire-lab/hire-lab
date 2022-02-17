@@ -17,11 +17,11 @@ const CandidateProfile = ({
     const {company} = useCompanyAuthContext()
 
     useEffect(() => {
-        candidateService.getOne(candidateId)
+        candidateService.getOne(company._id, candidateId)
         .then(result => {
             setCandidate(result)
         })
-    }, [candidateId])
+    }, [company._id, candidateId])
 
     const deleteHandler = (e) => {
         e.preventDefault()
@@ -43,20 +43,24 @@ const CandidateProfile = ({
                     <h3>CV:</h3>
                     <a className="cvLink" href={`http://${candidate.cv}`} target="_blank">{candidate.cv}</a>
 
-                    {candidate.companyId == company._id
+                    {candidate.jobs
                         ?  <>
                                 <h3>Applied for:</h3>
                                 <p>{candidate.jobs}</p>
                             </>
                         : null
                     }
-                   
-                   
+                
                 </div>
-                <div className="actions">
-                    <Link className="jobDetailsButton editJob approveBtn" to={`#`}><i className="fas fa-check"></i> Approve</Link>
-                    <Link className="jobDetailsButton editJob rejectBtn" to='#' onClick={deleteHandler}><i className="fas fa-times"></i> Reject</Link>
-                </div>
+
+                {candidate.jobs
+                    ?  <div className="actions">
+                            <Link className="jobDetailsButton editJob approveBtn" to={`#`}><i className="fas fa-check"></i> Approve</Link>
+                            <Link className="jobDetailsButton editJob rejectBtn" to='#' onClick={deleteHandler}><i className="fas fa-times"></i> Reject</Link>
+                        </div>
+                    : null
+                }
+
             </div>
         </section>
     )

@@ -64,7 +64,7 @@ function App() {
         
         <Route path='/candidates/:companyId/candidates' exact component={Candidates} />
         <Route path='/candidates/create' component={AddCandidate} />
-        <Route path='/candidates/:candidateId' exact component={CandidateProfile}/>
+        <Route path='/candidates/:companyId/candidates/:candidateId' exact component={CandidateProfile}/>
         <Route path='/candidates/edit/:candidateId' exact component={EditCandidate}/>
         
         <Route path='/interviews' exact component={Interviews} />

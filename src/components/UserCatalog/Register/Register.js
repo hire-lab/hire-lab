@@ -34,12 +34,12 @@ export default function Register() {
 
             <form className="loginForm" method="POST" onSubmit={onRegisterHandler}>
                 <div className="loginFormField">
-                    <label className="loginFormFieldLabel" htmlFor="email">Email</label>
-                    <input className="loginFormFieldInput" id="email" type="text" name="email" placeholder="maria.ivanova@company.com" />
-                </div>
-                <div className="loginFormField">
                     <label className="loginFormFieldLabel" htmlFor="name">Name</label>
                     <input className="loginFormFieldInput" id="name" type="text" name="name" placeholder="Maria Ivanova"/>
+                </div>
+                <div className="loginFormField">
+                    <label className="loginFormFieldLabel" htmlFor="email">Email</label>
+                    <input className="loginFormFieldInput" id="email" type="text" name="email" placeholder="maria.ivanova@company.com" />
                 </div>
                 <div className="loginFormField">
                     <label className="loginFormFieldLabel" htmlFor="cv">CV URL</label>
