@@ -1,20 +1,24 @@
-import { useState, useEffect } from "react";
-import { Link, useParams} from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { Link, useParams, useHistory} from "react-router-dom";
+import {AuthContext} from '../../../contexts/AuthContext';
 import * as userService from '../../../services/UserService';
+import './UserProfile.css'
 
 export default function UserProfile() {
     const {id} = useParams()
     const [user, setUser] = useState({})
+    const {logout} = useContext(AuthContext);
 
-    /*const history = useHistory()
+    const history = useHistory()
     const deleteHandler = (e) => {
         e.preventDefault()
 
-        candidateService.del(candidateId, user.accessToken)
+        userService.del(user._id, user.accessToken)
             .then(() => {
-                history.push('/candidates')
+                logout()
+                history.push('/')
             })
-    }*/
+    }
 
     useEffect(() => {
         userService.getOne(id)
@@ -36,7 +40,7 @@ export default function UserProfile() {
                 </div>
                 <div className="actions">
                     <Link className="jobDetailsButton editJob" to={`/users/${user._id}/edit`}>Edit Profile</Link>
-                    <Link className="jobDetailsButton editJob" to='#'>Delete Profile</Link>
+                    <Link className="jobDetailsButton editJob deleteBtn" to='#' onClick={deleteHandler}>Delete Profile</Link>
                 </div>
             </div>
         </section>

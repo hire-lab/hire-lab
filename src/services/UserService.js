@@ -45,3 +45,12 @@ export async function getOne(id) {
 }
 
 export const update = (userId, userData) => request.put(`${baseUrl}/users/${userId}`, userData)
+
+export const del = (userId, token) => {
+    return fetch(`${baseUrl}/users/${userId}`, {
+        method: 'DELETE',
+        headers: {
+            'X-Authorization': token
+        }
+    })
+}
