@@ -11,7 +11,7 @@
 }
 
 .jobsPageTitle {
-    text-align: center;;
+    text-align: center;
 }
 
 .jobsPageTitle h1{
@@ -46,4 +46,48 @@
 
 .addJobButtonWrapper{
     margin-top: 50px;
+}
+
+.jobSearchForm{
+    margin: 20px;
+}
+
+.hidden{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.searchButton{
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 15px;
+    background: #03a9f4;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 1px 1px 5px 1px #4E4E4E;
+    margin: 10px;
+}
+
+.searchInput {
+    font-size: 14px;
+    line-height: 20px;
+    height: 34px;
+    width: 380px;
+    border: 1px solid #CCCCCC;
+    padding: 6px 12px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px -1px #CCCCCC;
+}
+
+.searchInput:focus{
+    border: 1px solid #03a9f4;
+    box-shadow: 1px 1px 7px -1px #03a9f4;
+    outline: none
 }

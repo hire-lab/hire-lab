@@ -1,3 +1,7 @@
 .deleteBtn:hover{
     background: #EF534B;
 }
+
+a.deleteBtn:hover{
+    color: white
+}

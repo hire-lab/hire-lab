@@ -24,6 +24,31 @@ export default function Jobs() {
         </div>
     )
 
+    const onSearch = (e) => {
+        e.preventDefault()
+
+        const formData = new FormData(e.currentTarget)
+        let keyword = formData.get('jobSearch')
+
+        //add filter through keyword
+    }
+
+    const searchBar = (
+        <form className='jobSearchForm' onSubmit={onSearch}>
+            <label htmlFor='jobSearch'>
+                <span className='hidden'>Search Jobs </span>
+            </label>
+            <input
+                type='text'
+                className="searchInput"
+                id='jobSearch'
+                placeholder='ex. React Developer'
+                name='jobSearch'
+            />
+            <button type='submit' className='searchButton'>Search</button>
+        </form>
+    )
+
     return (
         <section className="jobsPage">
             <div className="jobsPageTitle">
@@ -32,7 +57,7 @@ export default function Jobs() {
 
                     {company.email
                         ? addJobButton
-                        : null
+                        : searchBar 
                     }
             </div>         
             <div className="jobListings">

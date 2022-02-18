@@ -62,3 +62,13 @@
     width: 160px;
     text-decoration: none;
 }
+
+.applyBtn{
+    padding: 12px 20px;
+    border-radius: 16px;
+}
+
+.applyBtn:hover{
+    background: #21C65E;
+    color: white;
+}
