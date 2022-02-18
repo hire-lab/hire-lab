@@ -12,7 +12,7 @@ export default function Navigation () {
     let userNavigation = (
         <ul className='navSectionNavbar'>
             <li className='homeNavWrapper'><span className='homeNav'>Welcome, {user.name}</span></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to="/about">About</Link></li>
+            <li className='homeNavWrapper'><Link className='homeNav' to={`/users/${user._id}`}>Profile</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/jobs">Jobs</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/logout">Logout</Link></li>                      
         </ul>

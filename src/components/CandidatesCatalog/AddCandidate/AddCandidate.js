@@ -16,12 +16,14 @@ const AddCandidate = () => {
         let email = formData.get('email');
         let cv = formData.get('cv');
         let companyId = company._id;
+        let userId = '';
 
         CandidateService.create({
             name,
             email,
             cv,
-            companyId
+            companyId,
+            userId
         }).then(result => {
             //result.message == error message!
             history.push(`/candidates/${company._id}/candidates`)

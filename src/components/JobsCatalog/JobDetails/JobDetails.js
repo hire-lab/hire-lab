@@ -38,7 +38,8 @@ export default function JobDetails() {
             email: user.email,
             cv: user.cv,
             jobId,
-            companyId
+            companyId,
+            userId: user._id
         }
 
         candidateService.create(candidate).then(() => {

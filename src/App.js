@@ -12,6 +12,8 @@ import NotFound from './components/NotFound/NotFound';
 import Login from './components/UserCatalog/Login/Login';
 import Register from './components/UserCatalog/Register/Register';
 import Logout from './components/UserCatalog/Logout/Logout';
+import UserProfile from './components/UserCatalog/UserProfile/UserProfile';
+import EditProfile from './components/UserCatalog/EditProfile/EditProfile';
 
 import CompanyLogin from './components/CompanyCatalog/Login/Login';
 import CompanyRegister from './components/CompanyCatalog/Register/Register';
@@ -48,6 +50,8 @@ function App() {
         <Route path='/login' component={Login}/>
         <Route path='/register' component={Register} />
         <Route path='/logout' component={Logout} />
+        <Route path='/users/:id' exact component={UserProfile}/>
+        <Route path='/users/:id/edit' component={EditProfile}/>
 
         <Route path='/company/login' component={CompanyLogin}/>
         <Route path='/company/register' component={CompanyRegister} />
