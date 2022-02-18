@@ -27,8 +27,8 @@ export default function Jobs() {
     const onSearch = (e) => {
         e.preventDefault()
 
-        const formData = new FormData(e.currentTarget)
-        let keyword = formData.get('jobSearch')
+        //const formData = new FormData(e.currentTarget)
+        //let keyword = formData.get('jobSearch')
 
         //add filter through keyword
     }
