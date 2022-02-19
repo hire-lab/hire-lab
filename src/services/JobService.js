@@ -4,6 +4,8 @@ const baseUrl = 'http://localhost:5555';
 
 export const getAll = () => request.get(`${baseUrl}/jobs`);
 
+export const getAllBySearch = (keyword) => request.get(`${baseUrl}/jobs?title=${keyword}`);
+
 export async function getOne(id){
     let result = await fetch(`${baseUrl}/jobs/${id}`);
     return result.json()

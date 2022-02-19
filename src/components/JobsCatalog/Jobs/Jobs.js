@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {useCompanyAuthContext} from '../../../contexts/AuthCompanyContext';
 import JobListing from '../JobListing/JobListing'
@@ -7,6 +7,7 @@ import './Jobs.css'
 
 export default function Jobs() {
     const [jobs, setJobs] = useState([]);
+    const ref = useRef();
     const {company} = useCompanyAuthContext();
 
     useEffect(() => {
@@ -27,10 +28,16 @@ export default function Jobs() {
     const onSearch = (e) => {
         e.preventDefault()
 
-        //const formData = new FormData(e.currentTarget)
-        //let keyword = formData.get('jobSearch')
+        const formData = new FormData(e.currentTarget)
+        let keyword = formData.get('jobSearch')
+        ref.current.value = '';
 
-        //add filter through keyword
+        JobService.getAllBySearch(keyword)
+            .then(result => {
+                setJobs(result)
+            }).catch(err => {
+                console.log(err)
+            })
     }
 
     const searchBar = (
@@ -44,6 +51,7 @@ export default function Jobs() {
                 id='jobSearch'
                 placeholder='ex. React Developer'
                 name='jobSearch'
+                ref={ref}
             />
             <button type='submit' className='searchButton'>Search</button>
         </form>
