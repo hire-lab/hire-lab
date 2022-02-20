@@ -30,9 +30,10 @@ export default function Jobs() {
 
         const formData = new FormData(e.currentTarget)
         let keyword = formData.get('jobSearch')
-        ref.current.value = '';
+        let location = formData.get('jobSearchByLocation')
+        ref.current.value = ' ';
 
-        JobService.getAllBySearch(keyword)
+        JobService.getAllBySearch(keyword, location)
             .then(result => {
                 setJobs(result)
             }).catch(err => {
@@ -42,15 +43,26 @@ export default function Jobs() {
 
     const searchBar = (
         <form className='jobSearchForm' onSubmit={onSearch}>
-            <label htmlFor='jobSearch'>
-                <span className='hidden'>Search Jobs </span>
+            <label htmlFor='jobSearch' className="searchLabel">
+                <span >Title: </span>
             </label>
             <input
                 type='text'
                 className="searchInput"
                 id='jobSearch'
-                placeholder='ex. React Developer'
+                placeholder='React Developer'
                 name='jobSearch'
+                ref={ref}
+            />
+            <label htmlFor='jobSearchByLocation' className="searchLabel">
+                <span className=''>  Location:  </span>
+            </label>
+            <input
+                type='text'
+                className="searchInput"
+                id='jobSearchByLocation'
+                placeholder='London, UK'
+                name='jobSearchByLocation'
                 ref={ref}
             />
             <button type='submit' className='searchButton'>Search</button>
