@@ -2,6 +2,7 @@ import {Route, Switch} from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthContext';
 import { AuthCompanyProvider } from './contexts/AuthCompanyContext';
+import { NotificationProvider } from './contexts/NotificationContext';
 
 import LandingPage from './components/Home/LandingPage';
 import Navigation from './components/Navigation/Navigation';
@@ -40,6 +41,7 @@ function App() {
   return (
     <AuthCompanyProvider>
     <AuthProvider>
+    <NotificationProvider>
      <div className="App">
       <Navigation />
       
@@ -78,6 +80,8 @@ function App() {
 
       <Footer />
       </div>
+      
+      </NotificationProvider>
     </AuthProvider>
     </AuthCompanyProvider>
   );
