@@ -42,6 +42,7 @@ export default function Jobs() {
     }
 
     const searchBar = (
+        <section className="loginPage searchFormWrapper">
         <form className='jobSearchForm' onSubmit={onSearch}>
             <label htmlFor='jobSearch' className="searchLabel">
                 <span >Title: </span>
@@ -67,6 +68,7 @@ export default function Jobs() {
             />
             <button type='submit' className='searchButton'>Search</button>
         </form>
+        </section>
     )
 
     return (
