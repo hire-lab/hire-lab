@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import {useCompanyAuthContext} from '../../../contexts/AuthCompanyContext';
 import JobListing from '../JobListing/JobListing'
 import * as JobService from '../../../services/JobService';
+import Loader from "../../Common/Loader/Loader";
 import './Jobs.css'
 
 export default function Jobs() {
     const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(true);
     const ref = useRef();
     const {company} = useCompanyAuthContext();
 
     useEffect(() => {
         JobService.getAll()
             .then(result => {
+                setLoading(false)
                 setJobs(result)
             }).catch(err => {
                 console.log(err)
@@ -77,16 +80,22 @@ export default function Jobs() {
                 <h1><span className="coloredText"> Job</span> Listings</h1> 
                 <span className="aboutPageTitleUnderline"></span>
 
+
                     {company.email
                         ? addJobButton
                         : searchBar 
                     }
-            </div>         
+            </div>
+
+            {loading 
+                ? <Loader />
+                : null}
+
             <div className="jobListings">
 
                 {jobs.length > 0
                     ? jobs.map(j => <JobListing key={j._id} job={j} />)
-                    : <h3>Loading...</h3>
+                    : <h3>There are no jobs yet.</h3>
                 }
 
             </div>
