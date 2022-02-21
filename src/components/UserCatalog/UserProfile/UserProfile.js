@@ -3,7 +3,7 @@ import { Link, useParams, useHistory} from "react-router-dom";
 import {AuthContext} from '../../../contexts/AuthContext';
 import * as userService from '../../../services/UserService';
 import { useNotificationContext, types } from "../../../contexts/NotificationContext";
-import ConfirmDialog from "../../ConfirmDialog/ConfirmDialog";
+import ConfirmDialog from "../../Common/ConfirmDialog/ConfirmDialog";
 import './UserProfile.css'
 
 export default function UserProfile() {

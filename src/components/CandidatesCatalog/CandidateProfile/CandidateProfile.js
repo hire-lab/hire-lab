@@ -5,7 +5,7 @@ import { useAuthContext } from "../../../contexts/AuthContext";
 import { useCompanyAuthContext } from "../../../contexts/AuthCompanyContext";
 import * as candidateService from '../../../services/CandidateService';
 import { useNotificationContext, types } from "../../../contexts/NotificationContext";
-import ConfirmDialog from "../../ConfirmDialog/ConfirmDialog";
+import ConfirmDialog from "../../Common/ConfirmDialog/ConfirmDialog";
 
 import './CandidateProfile.css'
 

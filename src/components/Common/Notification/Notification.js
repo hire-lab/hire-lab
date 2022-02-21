@@ -1,4 +1,4 @@
-import {useNotificationContext} from '../../contexts/NotificationContext';
+import {useNotificationContext} from '../../../contexts/NotificationContext';
 import './Notification.css'
 
 const Notification = () => {
