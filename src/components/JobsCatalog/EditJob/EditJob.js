@@ -1,11 +1,13 @@
 import { useParams, useHistory } from "react-router-dom";
 import useJobState from "../../../hooks/useJobState";
 import * as jobService from '../../../services/JobService';
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 
 export default function EditJob() {
     const history = useHistory();
     const {jobId} = useParams()
     const [job, setJob] = useJobState(jobId);
+    const {addNotification} = useNotificationContext()
 
     const onEditSubmitHandler = (e) => {
         e.preventDefault();
@@ -14,6 +16,7 @@ export default function EditJob() {
         jobService.update(job._id, jobData)
             .then(res => {
                 setJob(res)
+                addNotification('Job updated', types.success)
                 history.push(`/jobs/${jobId}`)
             })
         

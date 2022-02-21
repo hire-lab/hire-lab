@@ -28,7 +28,7 @@ const CandidateProfile = ({
 
         candidateService.del(candidateId, user.accessToken)
             .then(() => {
-                history.push('/candidates')
+                history.push(`/candidates/${company._id}/candidates`)
             })
     }
 

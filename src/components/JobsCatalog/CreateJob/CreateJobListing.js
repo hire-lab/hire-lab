@@ -1,12 +1,14 @@
 import {useHistory} from 'react-router-dom';
 import { isAuth } from '../../../hoc/isAuth';
 import * as JobService from '../../../services/JobService';
-import {useCompanyAuthContext} from '../../../contexts/AuthCompanyContext'
+import {useCompanyAuthContext} from '../../../contexts/AuthCompanyContext';
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 import './CreateJobListing.css'
 
 const CreateJobListing = () => {
     const history = useHistory();
     const {company} = useCompanyAuthContext();
+    const {addNotification} = useNotificationContext()
 
     const createJobHandler = (e) => {
         e.preventDefault();
@@ -26,7 +28,12 @@ const CreateJobListing = () => {
             companyId
         }, company.accessToken)
             .then(result => {
-                history.push(`/jobs/${companyId}/jobs`)
+                if(result.message) {
+                    addNotification(result.message, types.error)
+                } else {
+                    addNotification('Job added successfully', types.success)
+                    history.push(`/jobs/${companyId}/jobs`)
+                }
         })
     }
     return (

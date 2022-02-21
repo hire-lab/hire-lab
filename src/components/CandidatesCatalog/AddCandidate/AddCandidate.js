@@ -4,6 +4,7 @@ import { isAuth } from "../../../hoc/isAuth";
 import { useCompanyAuthContext } from '../../../contexts/AuthCompanyContext';
 import * as CandidateService from '../../../services/CandidateService';
 import * as jobService from '../../../services/JobService';
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 import './AddCandidate.css'
 
 
@@ -12,6 +13,7 @@ const AddCandidate = () => {
     const {company} = useCompanyAuthContext()
     let [jobId, setSelectedJob] = useState([])
     const [jobs, setJobs] = useState([])
+    const {addNotification} = useNotificationContext()
 
     useEffect(() => {
         jobService.getByCompanyId(company._id)
@@ -44,8 +46,12 @@ const AddCandidate = () => {
             userId,
             jobId
         }).then(result => {
-            //result.message == error message!
-            history.push(`/candidates/${company._id}/candidates`)
+            if(result.message) {
+                addNotification(result.message, types.error)
+            } else {
+                addNotification('Candidate added successfully', types.success)
+                history.push(`/candidates/${company._id}/candidates`)
+            }
         })
     }
 
