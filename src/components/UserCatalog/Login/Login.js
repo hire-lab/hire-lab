@@ -23,7 +23,6 @@ export default function Login() {
             })
             .catch(err => {
                 addNotification(err, types.error)
-                console.log(err)
             })
     }
 

@@ -22,7 +22,6 @@ export default function CompanyLogin() {
             })
             .catch(err => {
                 addNotification(err, types.error)
-                console.log(err)
             })
     }
 

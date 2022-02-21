@@ -1,12 +1,30 @@
-import { useHistory } from 'react-router';
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { isAuth } from "../../../hoc/isAuth";
 import { useCompanyAuthContext } from '../../../contexts/AuthCompanyContext';
 import * as CandidateService from '../../../services/CandidateService';
+import * as jobService from '../../../services/JobService';
 import './AddCandidate.css'
+
 
 const AddCandidate = () => {
     const history = useHistory()
     const {company} = useCompanyAuthContext()
+    let [jobId, setSelectedJob] = useState([])
+    const [jobs, setJobs] = useState([])
+
+    useEffect(() => {
+        jobService.getByCompanyId(company._id)
+            .then(result => {
+                setJobs(result)
+            })
+    }, [company._id])
+
+    const onJobSelect = (e) => {
+        jobId = e.target.value;
+        setSelectedJob(jobId)
+
+    }
     
     const addCandidateHandler = (e) => {
         e.preventDefault();
@@ -23,7 +41,8 @@ const AddCandidate = () => {
             email,
             cv,
             companyId,
-            userId
+            userId,
+            jobId
         }).then(result => {
             //result.message == error message!
             history.push(`/candidates/${company._id}/candidates`)
@@ -49,6 +68,14 @@ const AddCandidate = () => {
                     <label className="loginFormFieldLabel" htmlFor="cv">CV URL</label>
                     <input className="loginFormFieldInput" id="cv" type="text" name="cv" placeholder="https://maria-ivanova-cv.com"/>
                 </div>
+                <span className="input">
+                <select className="selectJob" id="availableJobs" name="availableJobs" onChange={onJobSelect} >
+                    <option selected disabled>Available Jobs:</option>
+                        {jobs.map(j => 
+                            <option key={j._id} value={j._id}>{j.title}</option>
+                        )}
+                </select>
+            </span>
                 <input className="loginBtn addJobBtn" type="submit" value="Add Candidate" />
             </form>
         </section>

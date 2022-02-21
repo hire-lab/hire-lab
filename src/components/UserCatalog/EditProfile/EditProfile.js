@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import * as userService from '../../../services/UserService';
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 
 export default function EditProfile(){
     const history = useHistory()
     const {id} = useParams()
     const [user, setUser] = useState({})
+    const {addNotification} = useNotificationContext()
+
 
     useEffect(() => {
         userService.getOne(id)
@@ -20,6 +23,7 @@ export default function EditProfile(){
         let userData = Object.fromEntries(new FormData(e.currentTarget))
         userService.update(user._id, userData)
             .then(res => {
+                addNotification('Profile updated', types.info)
                 history.push(`/users/${user._id}`)
             })
 
