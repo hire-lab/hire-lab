@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import * as CompanyService from '../../../services/CompanyService';
 import { AuthCompanyContext } from "../../../contexts/AuthCompanyContext";
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 
 export default function CompanyRegister() {
     const history = useHistory();
     const {login} = useContext(AuthCompanyContext);
+    const {addNotification} = useNotificationContext()
 
     const onRegisterHandler = (e) => {
         e.preventDefault();
@@ -13,15 +15,13 @@ export default function CompanyRegister() {
         let {name, email, password} = Object.fromEntries(new FormData(e.currentTarget));
         CompanyService.register(name, email, password)
             .then(authData => {
-                //error message = authData.message
-
                 if (authData.accessToken) {
                     login(authData)
+                    addNotification('You registered successfully', types.success)
                     history.push('/jobs')
                 } else {
-                    console.log(authData.message)
-                }
-                
+                    addNotification(authData.message, types.error)
+                }              
             })
     }
 

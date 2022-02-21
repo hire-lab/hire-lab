@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import * as userService from '../../../services/UserService';
 import { AuthContext } from "../../../contexts/AuthContext";
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 import './Register.css'
 
 export default function Register() {
     const history = useHistory();
     const {login} = useContext(AuthContext);
+    const {addNotification} = useNotificationContext()
 
     const onRegisterHandler = (e) => {
         e.preventDefault();
@@ -14,13 +16,12 @@ export default function Register() {
         let {email, name, cv, password} = Object.fromEntries(new FormData(e.currentTarget));
         userService.register(email, name, cv, password)
             .then(authData => {
-                //error message = authData.message
-
                 if (authData.accessToken) {
                     login(authData)
+                    addNotification('You registered successfully', types.success)
                     history.push('/jobs')
                 } else {
-                    console.log(authData.message)
+                    addNotification(authData.message, types.error)
                 }
                 
             })

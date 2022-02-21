@@ -22,7 +22,7 @@ export default function Login() {
                 history.push('/jobs')
             })
             .catch(err => {
-                //add show notification
+                addNotification(err, types.error)
                 console.log(err)
             })
     }

@@ -6,8 +6,8 @@
 }
 
 .top-left {
-	top: 30px;
-	left: 30px;
+	top: 20px;
+	left: 12px;
 	transition: transform .6s ease-in;
 	animation: toast-in-left .7s;
 }
@@ -38,7 +38,7 @@
 }
 
 .danger{
-	background: #C74243;
+	background: #EF534B;
 }
 
 .info{
