@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import * as userService from '../../../services/UserService';
 import  {AuthContext} from '../../../contexts/AuthContext';
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 import './Login.css'
 
 export default function Login() {
     const {login} = useContext(AuthContext);
     const history = useHistory();
+    const {addNotification} = useNotificationContext()
 
     const onLoginHandler = (e) => {
         e.preventDefault();
@@ -16,6 +18,7 @@ export default function Login() {
         userService.login(email, password)
             .then((authData) => {
                 login(authData)
+                addNotification('You logged in successfully', types.success)
                 history.push('/jobs')
             })
             .catch(err => {

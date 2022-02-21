@@ -9,6 +9,7 @@ import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
+import Notification from './components/Notification/Notification';
 
 import Login from './components/UserCatalog/Login/Login';
 import Register from './components/UserCatalog/Register/Register';
@@ -44,6 +45,7 @@ function App() {
     <NotificationProvider>
      <div className="App">
       <Navigation />
+      <Notification />
       
       <Switch>
         <Route path='/' exact component={LandingPage} />
