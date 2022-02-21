@@ -1,70 +1,50 @@
 .modal-wrapper {
-  background: white;
-  border: 1px solid #d0cccc;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-  margin: 0 auto;
-  transition: all 0.8s;
-  width: 60%;
-  border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.6rem 3rem;
+    border: 1px solid darkgrey;
+    color: white;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(178,131,209,1) 0%, rgba(219,100,100,1) 50%, rgba(237,172,19,0.969625350140056) 100%);
+    box-shadow: 1px 1px 5px 1px #4E4E4E;
 }
 
-.modal-header {
-  background: #e2e2e2;
-  height: 40px;
-  line-height: 40px;
-  padding: 5px 20px;
-  text-align: right;
-}
-
-.modal-header h2 {
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-
-.modal-body {
-  padding: 10px 15px;
-  text-align: center;
-  height: 200px;
-}
-
-.modal-footer {
-  background: #e2e2e2;
-  height: 35px;
-  padding: 15px;
-}
-
-.close-modal-btn {
-  color: white;
-  cursor: pointer;
-  float: right;
-  font-size: 30px;
-  margin: 0;
-}
-
-.close-modal-btn:hover {
+.close-modal-btn{
+  color: inherit;
+  font-family:inherit;
+  font-size: inherit;
+  padding: 0.3rem 3.4rem;
+  border: 1px solid darkgrey;
+  margin-right: 2.6rem;
+  box-shadow: 0 0 0 black;
+  transition: all 0.2s;
+  border-radius: 5px;
   color: black;
+  font-weight: 600;
 }
 
-.btn-cancel {
-  background-color: #b71c1c;
-  float: left;
+.close-modal-btn:last-child{
+    margin: 0;
 }
 
-.btn-continue {
-  background-color: #1b5e20;
-  float: right;
+.close-modal-btn:hover{
+    box-shadow: 1px 1px 5px 1px #4E4E4E;
+    transform: translate(-0.4rem, -0.4rem);
 }
 
-.back-shed {
-  background-color: rgba(48, 49, 48, 0.42);
-  height: 100%;
-  position: fixed;
-  transition: all 1.3s;
-  width: 100%;
+.close-modal-btn:active{
+    box-shadow: 0 0 0 black;
+    transform: translate(0, 0);
 }
 
-.open-modal-btn {
-  margin: 15px;
-  padding: 10px;
+.modal-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

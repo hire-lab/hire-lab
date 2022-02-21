@@ -5,7 +5,6 @@ import { useAuthContext } from "../../../contexts/AuthContext";
 import { useCompanyAuthContext } from "../../../contexts/AuthCompanyContext";
 import * as candidateService from '../../../services/CandidateService';
 import { useNotificationContext, types } from "../../../contexts/NotificationContext";
-import Modal from '../../Modal/Modal';
 import ConfirmDialog from "../../ConfirmDialog/ConfirmDialog";
 
 import './CandidateProfile.css'
@@ -49,7 +48,7 @@ const CandidateProfile = ({
 
     return (
         <>
-        <ConfirmDialog className="modal" show={showDeleteDialog} onCancel={() => setDeleteDialog(false)} onConfirm={deleteHandler}/>
+        <ConfirmDialog show={showDeleteDialog} onCancel={() => setDeleteDialog(false)} onConfirm={deleteHandler}/>
         <section className="jobDetails">
             <div className="jobDetailsInformation">
                 <h3>Name:</h3>
