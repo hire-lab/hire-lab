@@ -4,6 +4,9 @@ import { isAuth } from "../../../hoc/isAuth";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { useCompanyAuthContext } from "../../../contexts/AuthCompanyContext";
 import * as candidateService from '../../../services/CandidateService';
+import { useNotificationContext, types } from "../../../contexts/NotificationContext";
+import Modal from '../../Modal/Modal';
+import ConfirmDialog from "../../ConfirmDialog/ConfirmDialog";
 
 import './CandidateProfile.css'
 
@@ -15,6 +18,8 @@ const CandidateProfile = ({
     const history = useHistory()
     const {user} = useAuthContext()
     const {company} = useCompanyAuthContext()
+    const [showDeleteDialog, setDeleteDialog] = useState(false);
+    const {addNotification} = useNotificationContext()
 
     useEffect(() => {
         candidateService.getOne(company._id, candidateId)
@@ -28,11 +33,23 @@ const CandidateProfile = ({
 
         candidateService.del(candidateId, user.accessToken)
             .then(() => {
+                addNotification('Candidate removed', types.info)
                 history.push(`/candidates/${company._id}/candidates`)
+            })
+            .finally(() => {
+                setDeleteDialog(false)
             })
     }
 
+    const deleteClickHandler = (e) => {
+        e.preventDefault();
+
+        setDeleteDialog(true)
+    }
+
     return (
+        <>
+        <ConfirmDialog className="modal" show={showDeleteDialog} onCancel={() => setDeleteDialog(false)} onConfirm={deleteHandler}/>
         <section className="jobDetails">
             <div className="jobDetailsInformation">
                 <h3>Name:</h3>
@@ -56,13 +73,14 @@ const CandidateProfile = ({
                 {candidate.jobs
                     ?  <div className="actions">
                             <Link className="jobDetailsButton editJob approveBtn" to={`#`}><i className="fas fa-check"></i> Approve</Link>
-                            <Link className="jobDetailsButton editJob rejectBtn" to='#' onClick={deleteHandler}><i className="fas fa-times"></i> Reject</Link>
+                            <Link className="jobDetailsButton editJob rejectBtn" to='#' onClick={deleteClickHandler}><i className="fas fa-times"></i> Reject</Link>
                         </div>
                     : null
                 }
 
             </div>
         </section>
+        </>
     )
 }
 
