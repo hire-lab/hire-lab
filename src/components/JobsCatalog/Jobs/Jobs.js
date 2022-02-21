@@ -77,7 +77,7 @@ export default function Jobs() {
     return (
         <section className="jobsPage">
             <div className="jobsPageTitle">
-                <h1><span className="coloredText"> Job</span> Listings</h1> 
+                <h1><span className="coloredText"> All Job</span> Listings</h1> 
                 <span className="aboutPageTitleUnderline"></span>
 
 
@@ -89,7 +89,8 @@ export default function Jobs() {
 
             {loading 
                 ? <Loader />
-                : null}
+                : null
+            }
 
             <div className="jobListings">
 

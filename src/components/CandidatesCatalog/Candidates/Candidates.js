@@ -3,15 +3,18 @@ import { Link, useParams } from "react-router-dom";
 import { isAuth } from "../../../hoc/isAuth";
 import CandidateListing from '../CandidateListing/CandidateListing'
 import * as CandidateService from '../../../services/CandidateService';
+import Loader from "../../Common/Loader/Loader";
 import './Candidates.css'
 
 const Candidates = () => {
     const [candidates, setCandidates] = useState([]);
+    const [loading, setLoading] = useState(true);
     let {companyId} = useParams()
 
     useEffect(() => {
         CandidateService.getAll(companyId)
             .then(result => {
+                setLoading(false)
                 setCandidates(result)
             })
     }, [])
@@ -25,6 +28,11 @@ const Candidates = () => {
                     <Link className='addJobButton' to='/candidates/create'> Add new candidate </Link>
                 </div>
             </div>
+
+            {loading 
+                ? <Loader />
+                : null
+            }
 
             <div className="jobListings">
                 {candidates.length > 0
