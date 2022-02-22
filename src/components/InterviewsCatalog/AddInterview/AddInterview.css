@@ -1,14 +1,28 @@
 .selectCandidate{
-    border-radius: 2px;
+    border-radius: 5px;
     height: 26px;
     width: 200px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
     text-align: center;
+    background: white;
+    box-shadow: 1px 1px 5px 1px #4E4E4E;
 }
 
 .selectCandidate:focus{
     border: 1px solid #03a9f4;
     box-shadow: 1px 1px 7px -1px #03a9f4;
     outline: none
+}
+
+.calendarWrapper{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeSlotWrapper{
+    display: block;
+    margin: 20px;
 }

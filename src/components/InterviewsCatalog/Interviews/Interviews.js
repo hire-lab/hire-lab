@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Calendar from "react-calendar";
 import * as interviewService from '../../../services/InterviewService';
-import './Interviews.css'
+import 'react-calendar/dist/Calendar.css';
+import './Interviews.css';
+
 
 export default function Interviews(){
     const [interviews, setInterviews] = useState([]);
+    const [date, setDate] = useState(new Date())
     const { companyId } = useParams()
 
     useEffect(() => {
@@ -19,6 +23,10 @@ export default function Interviews(){
              <article className="loginPageTitle">
                 <h1>Upcoming Interviews:</h1>
             </article>
+
+            <div>
+                <Calendar onChange={setDate} value={date}/>
+            </div>
             <ul>
 
             {interviews.length > 0 
@@ -33,11 +41,10 @@ export default function Interviews(){
 }
 
 
-/*import Calendar from "react-calendar";
+/*
+import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import { useState } from "react";
 import moment from "moment";
-
 export default function Interview() {
     const [dateState, setDateState] = useState(new Date())
     const changeDate = (e) => {
@@ -53,5 +60,5 @@ export default function Interview() {
             <p className="interview-calendar-info">Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
         </section>
     )
-}
-*/
+}*/
+
