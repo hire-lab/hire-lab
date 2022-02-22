@@ -1,8 +1,8 @@
-const baseUrl = 'https://hire-lab-rest-api.herokuapp.com';
-//const baseUrl = 'http://localhost:5555';
+//const baseUrl = 'https://hire-lab-rest-api.herokuapp.com';
+const baseUrl = 'http://localhost:5555';
 
-export async function getAll(filter) {
-    let result =  await fetch(`${baseUrl}/interviews`);
+export async function getAll(companyId) {
+    let result =  await fetch(`${baseUrl}/interviews/${companyId}`);
     return result.json()
 }
 

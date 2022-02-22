@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import * as interviewService from '../../../services/InterviewService';
 import './Interviews.css'
 
 export default function Interviews(){
     const [interviews, setInterviews] = useState([]);
+    const { companyId } = useParams()
 
     useEffect(() => {
-        interviewService.getAll()
+        interviewService.getAll(companyId)
             .then(result => {
                 setInterviews(result)
             })
-    }, [])
+    }, [companyId])
 
     return (
         <section className="interviewsList">
@@ -18,7 +20,13 @@ export default function Interviews(){
                 <h1>Upcoming Interviews:</h1>
             </article>
             <ul>
-                {interviews.map(i => <li key={i.potentialCandidates}>{i.candidateName} - {i.jobTitle}</li>)}
+
+            {interviews.length > 0 
+                ? interviews.map(i => 
+                    <li key={i._id}>{i.candidateId.name} - {i.jobId.title}</li>)
+                :   <h4>There are no interviews yet.</h4>
+            }
+            
             </ul>
         </section>
     )

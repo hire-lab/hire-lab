@@ -4,6 +4,7 @@ import { isAuth } from "../../../hoc/isAuth";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { useCompanyAuthContext } from "../../../contexts/AuthCompanyContext";
 import * as candidateService from '../../../services/CandidateService';
+import * as interviewService from '../../../services/InterviewService';
 import { useNotificationContext, types } from "../../../contexts/NotificationContext";
 import ConfirmDialog from "../../Common/ConfirmDialog/ConfirmDialog";
 
@@ -46,6 +47,28 @@ const CandidateProfile = ({
         setDeleteDialog(true)
     }
 
+    const onApproveBtnClick = (e) => {
+        e.preventDefault();
+        let jobId = candidate.jobId.map(id => id._id)
+
+        const interviewData = {
+            jobId,
+            candidateId,
+            companyId: company._id
+        }
+
+        interviewService.bookInterview(interviewData)
+            .then(result => {
+                if (result.message) {
+                    addNotification(result.message, types.error)
+                } else {
+                    addNotification('Interview added', types.success)
+                    history.push(`/jobs/${interviewData.jobId}/interviews`)
+                }
+            })
+ 
+    }
+
     return (
         <>
         <ConfirmDialog show={showDeleteDialog} onCancel={() => setDeleteDialog(false)} onConfirm={deleteHandler}/>
@@ -71,7 +94,7 @@ const CandidateProfile = ({
 
                 {candidate.jobs
                     ?  <div className="actions">
-                            <Link className="jobDetailsButton editJob approveBtn" to={`#`}><i className="fas fa-check"></i> Approve</Link>
+                            <Link className="jobDetailsButton editJob approveBtn" to='#' onClick={onApproveBtnClick}><i className="fas fa-check"></i> Approve</Link>
                             <Link className="jobDetailsButton editJob rejectBtn" to='#' onClick={deleteClickHandler}><i className="fas fa-times"></i> Reject</Link>
                         </div>
                     : null

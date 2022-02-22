@@ -68,14 +68,14 @@ function App() {
         <Route path='/jobs/:companyId/jobs' exact component={JobsByCompanyId}/>
         <Route path='/jobs/edit/:jobId' exact component={EditJob}/>
         <Route path='/jobs/:jobId/interviews' exact component={InterviewsaByJobId} />
-        <Route path='/jobs/:jobId/addInterview' exact component={AddInterview} />
         
         <Route path='/candidates/:companyId/candidates' exact component={Candidates} />
         <Route path='/candidates/create' component={AddCandidate} />
         <Route path='/candidates/:companyId/candidates/:candidateId' exact component={CandidateProfile}/>
         <Route path='/candidates/edit/:candidateId' exact component={EditCandidate}/>
+        <Route path='/candidates/:candidateId/addInterview' exact component={AddInterview} />
         
-        <Route path='/interviews' exact component={Interviews} />
+        <Route path='/interviews/:companyId' exact component={Interviews} />
 
         <Route component={NotFound}/>
       </Switch>
