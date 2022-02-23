@@ -15,11 +15,6 @@ export default function Interview(){
             })
     }, [jobId])
 
-    const onDateClick = (e) => {
-        //adjust date formats and compare
-        console.log(e)
-    }
-
     return (
         <section className="interviewsList">
             <article className="loginPageTitle">
@@ -27,7 +22,7 @@ export default function Interview(){
             </article>
 
             <div className="calendarWrapper">
-                    <Calendar onChange={onDateClick} value={date}/>
+                    <Calendar onChange={setDate} value={date}/>
             </div>
         <ul>
             {interviews.length > 0 

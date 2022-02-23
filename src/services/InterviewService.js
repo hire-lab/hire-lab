@@ -1,13 +1,18 @@
 //const baseUrl = 'https://hire-lab-rest-api.herokuapp.com';
 const baseUrl = 'http://localhost:5555';
 
-export async function getAll(companyId) {
-    let result =  await fetch(`${baseUrl}/interviews/${companyId}`);
+export async function getAll(companyId, date) {
+    let result =  await fetch(`${baseUrl}/interviews/${companyId}?date=${date}`);
     return result.json()
 }
 
 export async function getByJobId(jobId) {
     let result = await fetch(`${baseUrl}/jobs/${jobId}/interviews`)
+    return result.json()
+}
+
+export async function getAllByDate(jobId, date){
+    let result = await fetch(`${baseUrl}/jobs/${jobId}/interviews?date=${date}`)
     return result.json()
 }
 

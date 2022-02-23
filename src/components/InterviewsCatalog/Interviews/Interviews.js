@@ -7,12 +7,12 @@ import './Interviews.css';
 
 
 export default function Interviews(){
-    const [interviews, setInterviews] = useState([]);
-    const [date, setDate] = useState(new Date())
+    let [interviews, setInterviews] = useState([]);
+    let [date, setDate] = useState(new Date());
     const { companyId } = useParams()
 
     useEffect(() => {
-        interviewService.getAll(companyId)
+        interviewService.getAll(companyId, date)
             .then(result => {
                 setInterviews(result)
             })
@@ -24,14 +24,14 @@ export default function Interviews(){
                 <h1>Upcoming Interviews:</h1>
             </article>
 
-            <div>
-                <Calendar onChange={setDate} value={date}/>
+            <div className="calendarWrapper">
+                <Calendar onClickDay={setDate} value={date}/>
             </div>
             <ul>
 
             {interviews.length > 0 
                 ? interviews.map(i => 
-                    <li key={i._id}>{i.candidateId.name} - {i.jobId.title}</li>)
+                    <li key={i._id}>{i.date} {i.time} - {i.candidateId.name} - {i.jobId.title}</li>)
                 :   <h4>There are no interviews yet.</h4>
             }
             

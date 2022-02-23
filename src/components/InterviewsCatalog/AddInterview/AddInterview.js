@@ -16,6 +16,7 @@ export default function AddInterview() {
     let {candidateId} = useParams();
     const {company} = useCompanyAuthContext();
     const history = useHistory();
+    // minDate={new Date()}
     
     useEffect(() => {
         candidateService.getOne(company._id, candidateId)
@@ -52,7 +53,6 @@ export default function AddInterview() {
             date,
             time
         }
-         //date.toDateString()
 
         interviewService.bookInterview(interviewData)
             .then(result => {
