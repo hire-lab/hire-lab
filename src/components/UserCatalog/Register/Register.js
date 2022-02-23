@@ -13,7 +13,12 @@ export default function Register() {
     const onRegisterHandler = (e) => {
         e.preventDefault();
 
-        let {email, name, cv, password} = Object.fromEntries(new FormData(e.currentTarget));
+        let {email, name, cv, password, rePass} = Object.fromEntries(new FormData(e.currentTarget));
+
+        if (password != rePass){
+            return addNotification('Passwords don\'t match', types.error)
+        }
+
         userService.register(email, name, cv, password)
             .then(authData => {
                 if (authData.accessToken) {

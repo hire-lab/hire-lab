@@ -12,7 +12,14 @@ export default function CompanyRegister() {
     const onRegisterHandler = (e) => {
         e.preventDefault();
 
-        let {name, email, password} = Object.fromEntries(new FormData(e.currentTarget));
+        let {name, email, password, rePass} = Object.fromEntries(new FormData(e.currentTarget));
+
+
+        if (password != rePass){
+            return addNotification('Passwords don\'t match', types.error)
+        }
+
+        
         CompanyService.register(name, email, password)
             .then(authData => {
                 if (authData.accessToken) {
