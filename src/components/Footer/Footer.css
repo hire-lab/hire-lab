@@ -53,5 +53,16 @@
 
 .footerCopyright{
     color: #C1E5FC;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.footerCopyright a{
+    color: #C1E5FC;
+    text-decoration: none;
+}
+
+.footerCopyright a:hover{
+    text-decoration: underline;
+    color: black;
+    font-weight: 600;
 }

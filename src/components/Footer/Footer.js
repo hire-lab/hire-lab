@@ -14,7 +14,7 @@ export default function Footer () {
             <li className="footerLink"><a href="#"><i className="fab fa-facebook-f"></i></a></li>
             <li className="footerLink"><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
         </ul>
-        <span className="footerCopyright">&copy; Copyright Zlatina Moga 2021</span>
+        <span className="footerCopyright">&copy; Copyright <a href='https://github.com/zlatina-moga' target='_blank'>Zlatina Moga</a></span>
     </footer>
     )
 }
