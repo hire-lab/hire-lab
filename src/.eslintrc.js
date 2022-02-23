@@ -6,6 +6,7 @@ module.exports = {
         'jsx-a11y/anchor-is-valid': 'off',
         'react-hooks/exhaustive-deps': 'off',
         'eqeqeq': 'off',
-        'no-throw-literal': 'off'
+        'no-throw-literal': 'off',
+        'no-unused-vars': 'off'
     }
 }
