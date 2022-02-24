@@ -6,12 +6,7 @@ export async function getAll(companyId, date) {
     return result.json()
 }
 
-export async function getByJobId(jobId) {
-    let result = await fetch(`${baseUrl}/jobs/${jobId}/interviews`)
-    return result.json()
-}
-
-export async function getAllByDate(jobId, date){
+export async function getByJobId(jobId, date) {
     let result = await fetch(`${baseUrl}/jobs/${jobId}/interviews?date=${date}`)
     return result.json()
 }

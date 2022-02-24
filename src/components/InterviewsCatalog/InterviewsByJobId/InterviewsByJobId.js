@@ -9,11 +9,11 @@ export default function Interview(){
     let [date, setDate] = useState(new Date());
 
     useEffect(() => {
-        interviewService.getByJobId(jobId)
+        interviewService.getByJobId(jobId, date)
             .then(result => {
                 setInterviews(result)
             })
-    }, [jobId])
+    }, [jobId, date])
 
     return (
         <section className="interviewsList">
@@ -22,12 +22,12 @@ export default function Interview(){
             </article>
 
             <div className="calendarWrapper">
-                    <Calendar onChange={setDate} value={date}/>
+                    <Calendar onClickDay={setDate} value={date}/>
             </div>
         <ul>
             {interviews.length > 0 
                 ? interviews.map(i => 
-                <li key={i._id}>{i.date} {i.time} - {i.candidateId.name} - {i.jobId.title}</li>)
+                <li key={i._id}>{i.date.split('T')[0]} {i.time} - {i.candidateId.name} - {i.jobId.title}</li>)
             :       <h4>There are no interviews yet.</h4>
             }
         </ul>

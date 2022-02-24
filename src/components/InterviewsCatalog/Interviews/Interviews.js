@@ -31,8 +31,9 @@ export default function Interviews(){
             <ul>
 
             {interviews.length > 0 
-                ? interviews.map(i => 
-                    <li key={i._id}>{i.date} {i.time} - {i.candidateId.name} - {i.jobId.title}</li>)
+                ? interviews
+                    .map(i => 
+                    <li key={i._id}>{i.date.split('T')[0]} {i.time} - {i.candidateId.name} - {i.jobId.title}</li>)
                 :   <h4>There are no interviews yet.</h4>
             }
             

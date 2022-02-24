@@ -76,7 +76,7 @@ export default function AddInterview() {
                 <h3>Interview date:</h3>
 
                 <div className="calendarWrapper">
-                    <Calendar onChange={setDate} value={date}/>
+                    <Calendar onChange={setDate} minDate={new Date()} value={date}/>
                 </div>
 
                 <span className="timeSlotWrapper">
