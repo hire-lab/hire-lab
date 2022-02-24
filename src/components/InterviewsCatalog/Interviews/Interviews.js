@@ -22,18 +22,18 @@ export default function Interviews(){
     return (
         <section className="interviewsList">
              <article className="loginPageTitle">
-                <h1>Upcoming Interviews:</h1>
+                <h1>All Upcoming Interviews:</h1>
             </article>
 
             <div className="calendarWrapper">
                 <Calendar onClickDay={setDate} value={date}/>
             </div>
-            <ul>
+            <ul className="interviewList">
 
             {interviews.length > 0 
                 ? interviews
                     .map(i => 
-                    <li key={i._id}>{i.date.split('T')[0]} {i.time} - {i.candidateId.name} - {i.jobId.title}</li>)
+                    <li key={i._id}> <i className="fa fa-arrow-right"></i>{i.date.split('T')[0]} {i.time} - {i.candidateId.name} - {i.jobId.title}</li>)
                 :   <h4>There are no interviews yet.</h4>
             }
             

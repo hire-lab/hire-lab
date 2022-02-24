@@ -66,7 +66,7 @@ export default function AddInterview() {
     }
 
     return (
-        <section className="jobDetails">
+        <section className="jobDetails addInterview">
         <div className="jobDetailsInformation">
             <h3>Name:</h3>
             <h1>{candidate.name}</h1>
