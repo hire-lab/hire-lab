@@ -6,7 +6,7 @@ export default function About() {
         <article className="aboutPageTitleSection">
             <h1 className="aboutPageTitle">Hire Lab</h1>
             <span className="aboutPageTitleUnderline"></span>
-            <p className="aboutPageTitleInfo">This challenge of finding the perfect candidate is real, and it happens so, because:</p>
+            <p className="aboutPageTitleInfo">Welcome to Hire Lab</p>
         </article>
         <article className="aboutPageText">
             <section className="aboutPageTextCard">
@@ -44,7 +44,7 @@ export default function About() {
                     <i className="far fa-lightbulb back-icon"></i>
                 </div>
                 <div className="aboutPageTextCardContent">
-                    <p>One of the most often met challenges in companies, in terms of recruitment and human resources selection, is related to the time lost with recruitment/executive search processes, time which could be used more productively for business!</p>
+                    <p>There's no need to look anywhere else. Hire Lab is the only site you'll ever need to find your next job.</p>
                 </div>
             </section>
         </article>
