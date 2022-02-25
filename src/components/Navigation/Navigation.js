@@ -9,11 +9,14 @@ export default function Navigation () {
     const {company} = useContext(AuthCompanyContext);
     let navigation = null;
 
+    /*            
+            <li className='homeNavWrapper'><Link className='homeNav' to={`/interviews/${company._id}`}>Interviews</Link></li>*/
+
     let userNavigation = (
         <ul className='navSectionNavbar'>
             <li className='homeNavWrapper'><span className='homeNav'>Welcome, {user.name}</span></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to={`/users/${user._id}`}>Profile</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/jobs">Jobs</Link></li>
+            <li className='homeNavWrapper'><Link className='homeNav' to={`/users/${user._id}`}>Profile</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/logout">Logout</Link></li>                      
         </ul>
     );
@@ -21,9 +24,8 @@ export default function Navigation () {
     let companyNavigation = (
         <ul className='navSectionNavbar'>
             <li className='homeNavWrapper'><span className='homeNav'>Welcome, {company.name}</span></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to={`/jobs/${company._id}/jobs`}>Jobs</Link></li>
+            <li className='homeNavWrapper'><Link className='homeNav' to={`/jobs/${company._id}/jobs`}> {company.name} Jobs</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to={`/candidates/${company._id}/candidates`}>Candidates</Link></li>
-            <li className='homeNavWrapper'><Link className='homeNav' to={`/interviews/${company._id}`}>Interviews</Link></li>
             <li className='homeNavWrapper'><Link className='homeNav' to="/company/logout">Logout</Link></li>                      
         </ul>
     );

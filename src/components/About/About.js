@@ -15,7 +15,7 @@ export default function About() {
                     <i className="fas fa-users back-icon"></i>
                 </div>
                 <div className="aboutPageTextCardContent">
-                    <p>Thousands of candidates apply to the recruitment ads posted on the Internet, a large part of them having nothing in common with the position, but the time spent on viewing their CVs accumulates.</p>
+                    <p>Hire Lab posts listings for job seekers in every industry, every level from entry to executive, and every lifestyle (freelance, part-time, internship, full-time). Candidates can search by job title and location. </p>
                 </div>
             </section>
             <section className="aboutPageTextCard">
@@ -24,7 +24,7 @@ export default function About() {
                     <i className="fas fa-mobile-alt back-icon"></i>
                 </div>
                 <div className="aboutPageTextCardContent">
-                    <p>Those qualified after the initial screening stage are called in for a first interview, but some of those with appointments simply do not come to the interview; it goes without saying that this stage leads to a great loss of valuable time!</p>
+                    <p>To start your search on Hire Lab, you can create a profile, upload a link to your resume. You can also browse active listings using the site’s search bar. On each job listing, you’ll see information about the position.</p>
                 </div>
             </section>
         </article>
@@ -35,7 +35,7 @@ export default function About() {
                     <i className="fas fa-cog back-icon"></i>
                 </div>
                 <div className="aboutPageTextCardContent">
-                    <p>Even initial interviews, when held with own personnel, represent time spent less efficiently when the candidates are inadequate.</p>
+                    <p>Hire Lab adds up-to-date job listings in dozens of fields including education, finance, healthcare, law, marketing, and tech. The site is free to use, both for companies and job seekers, who can browse through all opportunities.</p>
                 </div>
             </section>
             <section className="aboutPageTextCard">
