@@ -41,7 +41,7 @@ System for creating, managing and adding job listings for both users and compani
 {
     name: String,
     email: String,
-    cv link: String, 
+    cv: String, 
     password: String
 }
 ```
