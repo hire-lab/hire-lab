@@ -1,5 +1,5 @@
 # Hire Lab
-System for creating, managing and adding job listings with free access
+System for creating, managing and adding job listings for both users and companies
 
 ## Functionality
 * User Registration
