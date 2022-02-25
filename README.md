@@ -14,7 +14,7 @@ System for creating, managing and adding job listings for both users and compani
 
 ## User Views (Pages)
 * **Welcome screen** - landing page
-* **Login/Register** - regsitration with email, name, CV URL link, and password for users, looking to apply for a job
+* **Login/Register** - regsitration with email, name, CV URL link, and password for users, looking to apply for a job; additional information on registered users in hire-lab-rest-api
 * **Profile Page** - information about email, name and CV URL link
 * **Profile Editor** - integrated edit for email, name and CV URL link information or delete account
 * **Jobs Browser** - list with jobs and option to search by title or location
@@ -23,7 +23,7 @@ System for creating, managing and adding job listings for both users and compani
 
 ## Company Views (Pages)
 * **Welcome screen** - landing page
-* **Login/Register** - regsitration with email, company name and password for companies. After successful login, user is redirected to all jobs browser
+* **Login/Register** - regsitration with email, company name and password for companies. After successful login, user is redirected to all jobs browser; additional information on registered users in hire-lab-rest-api
 * **Company Jobs Browser** - list with all company job listings
 * **Job Details** - additional description, option to edit or delete, information about the candidates, as well as booked interviews for the job listing
 * **Job Editor** - integrated editor for job listing
