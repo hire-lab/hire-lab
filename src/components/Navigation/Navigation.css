@@ -1,8 +1,15 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    background: rgba(252, 252, 252, 1) !important;
+    border-bottom: 1px solid black;
+}
+
 .navSectionContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 80px;
+    margin: 10px 80px;
 }
 
 .navSectionNavbar{
