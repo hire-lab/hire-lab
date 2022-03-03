@@ -1,14 +1,22 @@
 # Hire Lab
 React application for creating, managing and adding job listings for both users and companies. 
-To execute it manually open a command prompt and run `npm start` or access https://vigilant-borg-2cfac4.netlify.app
+To execute it manually open a command prompt and run `npm start` or access https://vigilant-borg-2cfac4.netlify.app .
+
+The service is initialized with two users, which can be used for immediate testing:
+
+johndoe@gmail.com : 123456 - for users
+email@company.com : 123456 - for companies
 
 # Live Demo 
 https://vigilant-borg-2cfac4.netlify.app/ 
 
 ## Functionality
-* User Registration
-* Option for viewing and searching job listings
-* Option for searching by title and location
+* User or Company Registration/Login/Logout
+* Option for viewing and searching job listings by title and/or location
+* Option for applying for users
+* Option for viewing candidate profiles for companies, approve for an interview or reject
+* Once approved, option for booking an interview with a date and time slot - for companies
+* Option for viewing all job interviews by date with react calendar - for companies
 * Fluid UX
 
 ## Technologies
@@ -92,4 +100,4 @@ https://vigilant-borg-2cfac4.netlify.app/
 #### Access Control
 * Guests can register, view the job catalog and job details
 * Registered users can do all the above, as well as apply for the job listings; edit and delete profile
-* Registered companies can view the job catalog and job details; add, edit and delete job listings of their own; add candidates; approve candidates for interviews or reject them
+* Registered companies can view the job catalog and job details; add, edit and delete job listings of their own; add new candidates; approve candidates for interviews or reject them
