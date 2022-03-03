@@ -4,8 +4,8 @@ To execute it manually open a command prompt and run `npm start` or access https
 
 The service is initialized with two users, which can be used for immediate testing:
 
-johndoe@gmail.com : 123456 - for users
-email@company.com : 123456 - for companies
+johndoe@gmail.com : 123456 - for users;
+email@company.com : 123456 - for companies;
 
 # Live Demo 
 https://vigilant-borg-2cfac4.netlify.app/ 
