@@ -1,5 +1,6 @@
 # Hire Lab
-System for creating, managing and adding job listings for both users and companies.
+React application for creating, managing and adding job listings for both users and companies. 
+To execute it manually open a command prompt and run npm start or access https://vigilant-borg-2cfac4.netlify.app
 
 # Live Demo 
 https://vigilant-borg-2cfac4.netlify.app/ 
