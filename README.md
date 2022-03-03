@@ -1,5 +1,8 @@
 # Hire Lab
-System for creating, managing and adding job listings for both users and companies
+System for creating, managing and adding job listings for both users and companies.
+
+# Live Demo 
+https://vigilant-borg-2cfac4.netlify.app/ 
 
 ## Functionality
 * User Registration
