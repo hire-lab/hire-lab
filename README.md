@@ -6,7 +6,7 @@ To execute it manually run `npm start` or access https://vigilant-borg-2cfac4.ne
 ### Authentication
 
 The service is initialized with two users, which can be used for immediate testing:
-* johndoe@gmail.com : 123456 - for users
+* ivan.ivanov@gmail.com : 123456 - for users
 * email@company.com : 123456 - for companies
 
 # Live Demo 
