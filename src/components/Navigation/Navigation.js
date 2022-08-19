@@ -9,8 +9,6 @@ export default function Navigation () {
     const {company} = useContext(AuthCompanyContext);
     let navigation = null;
 
-    /*            
-            <li className='homeNavWrapper'><Link className='homeNav' to={`/interviews/${company._id}`}>Interviews</Link></li>*/
 
     let userNavigation = (
         <ul className='navSectionNavbar'>
