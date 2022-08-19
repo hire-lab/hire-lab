@@ -5,8 +5,8 @@ export default function Footer () {
         <footer className="footer">
         <h5 className="footerTitle">Hire Lab</h5>
         <span className="footerInfoWrapper">  
-            <p>email@email.com</p>
-            <p>+000000000000</p>
+            <p>email@gmail.com</p>
+            <p>+1234567890</p>
         </span>
        
         <ul className="footerLinks">
