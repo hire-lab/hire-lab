@@ -2,6 +2,7 @@
 React application for creating, managing and adding job listings for both users and companies, currently deployed on Netlify. 
 To install all dependencies, open a terminal and run `npm install`.
 To execute it manually run `npm start` or access https://vigilant-borg-2cfac4.netlify.app .
+* Please make sure to run the API service first https://github.com/hire-lab/hire-lab-rest-api .
 
 ### Authentication
 
